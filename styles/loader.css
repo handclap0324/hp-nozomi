@@ -1,3 +1,12 @@
+@charset "UTF-8";
+/************************************************************************************************
+ 参考URL:https://www.nxworld.net/tips/css-hover-underline-animation-examples-and-sass-mixin.html
+ $type: fade か slide
+  $dir:  fadeの場合 → top か　bottom指定
+ 　　  slideの場合 → left-right, left-in-right, right-left, right-in-left, centerのいずれかを指定
+ 
+ .example a { @include hover-underline('slide', 'center');}
+ ************************************************************************************************/
 .pace-done #global-container {
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
@@ -32,7 +41,7 @@
   font-weight: 100;
   font-size: 2em;
   font-family: 'Helvetica Neue', 'Yu Gothic', 'Meiryo', sans-serif;
-  color: #535353;
+  color: #00A440;
 }
 
 .pace.pace-inactive {
@@ -42,7 +51,7 @@
 .pace-progress-inner {
   width: 40px;
   height: 40px;
-  background-color: #904669;
+  background-color: #00A440;
   margin: 0 auto;
   -webkit-animation-name: sk-rotateplane;
           animation-name: sk-rotateplane;

@@ -1,10 +1,7 @@
 'use strict';
-
 {
 
 document.addEventListener('DOMContentLoaded', function() {
-
-
 
 
     //フォントサイズ変更

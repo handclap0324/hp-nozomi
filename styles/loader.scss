@@ -33,7 +33,7 @@
   font-weight: 100;
   font-size: 2em;
   font-family: 'Helvetica Neue', 'Yu Gothic', 'Meiryo', sans-serif;
-  color: $cSubTitle;
+  color: $colorMain;
 }
 
 .pace.pace-inactive {
@@ -43,7 +43,7 @@
 .pace-progress-inner {
   width: 40px;
   height: 40px;
-  background-color: $cWineRed;
+  background-color: $colorMain;
 
   margin: 0 auto;
   @include animation(
