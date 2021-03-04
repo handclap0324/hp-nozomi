@@ -1,0 +1,204 @@
+// 文字サイスの指定 baseを16pxとした場合
+
+@mixin fontSize($size: 24, $base: 16) {
+  font-size: $size + px;
+  font-size: ($size / $base) * 1rem;
+ }
+ 
+ // Meadia query
+ 
+ $breakpoint_pc: 1080px;
+ $breakpoint_tb: 767px;
+ $breakpoint_tb_plus: 768px;
+ $breakpoint_sp: 640px;
+ $breakpoint_sp2: 320px;
+ 
+ @mixin max-screen($breakPoint) {
+    @media screen and (max-width: $breakPoint) {
+        @content;
+    }
+ }
+ @mixin min-screen($breakPoint) {
+    @media print, screen and (min-width: $breakPoint) {
+        @content;
+    }
+ }
+ @mixin screen($breakPoint_min, $breakPoint_max) {
+    @media screen and (min-width: $breakPoint_min) and (max-width: $breakPoint_max) {
+        @content;
+    }
+ }
+ 
+ // $PATH_IMGに画像のファイルまでのパスを設定
+ 
+ $PATH_IMG: "../img/";
+ 
+ @mixin background-image($fileName) {
+    background-image: url($PATH_IMG + $fileName);
+    background-repeat: no-repeat;
+    //background-position: 50% 50%;
+ }
+ 
+//親要素に対して子要素を中央寄せ
+//x：横方向中央寄せ
+//y：縦方向中央寄せ
+//xy：縦横方向中央寄せ
+ 
+ @mixin center($direction) {
+    position: absolute;
+    @if $direction==xy {
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    @else if $direction==x {
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    @else if $direction==y {
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+ }
+ 
+ // clearfix
+ @mixin cf {
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+ }
+ 
+ // リンクカラーの設定
+ @mixin link-color($color) {
+    color: $color;
+     &:hover {
+       color: lighten($color, 10%);
+       text-decoration: none;
+  }
+ }
+ 
+ //Font Awesome
+ @mixin fontawesome($type:Free, $weight:900){
+    font-family: "Font Awesome 5 #{$type}";
+    font-weight: $weight;
+    position: relative;
+ }
+ 
+ // モダングラデーション1
+ @mixin bg-gradient($angle: 180deg, $color: #0bd, $amount: 20%) {
+  background: linear-gradient($angle, $color, adjust-hue($color, $amount)) fixed;
+ }
+ 
+ // モダングラデーション2 メインカラーを基調としたもの
+ @mixin gradient_01($color: lighten($color-main, 30%)){
+    background-color: $color;
+  background-image: radial-gradient(circle farthest-side at center bottom,$color,$color-main 125%);
+    //color: #fff;
+ }
+ 
+ /************************************************************************************************
+ 参考URL:https://www.nxworld.net/tips/css-hover-underline-animation-examples-and-sass-mixin.html
+ $type: fade か slide
+  $dir:  fadeの場合 → top か　bottom指定
+ 　　  slideの場合 → left-right, left-in-right, right-left, right-in-left, centerのいずれかを指定
+ 
+ .example a { @include hover-underline('slide', 'center');}
+ ************************************************************************************************/
+
+ @mixin hover-underline($type: fade, $dir: null, $weight: 2px, $color: $color-sub) {
+  @if $dir == null {
+    @if $type == fade {
+      $dir: 'top';
+    } @else if $type == slide {
+      $dir: 'center';
+    }
+  }
+ 
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  &::after {
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: $weight;
+    background: $color;
+    @if $type == fade {
+      transition: .3s;
+      opacity: 0;
+      visibility: hidden;
+      @if $dir == bottom {
+        bottom: $weight * -4;
+      } @else {
+        bottom: $weight;
+      }
+    } @else if $type == slide {
+      bottom: 0px; /* 下線部の動きがおかしい場合、ここを微調整 */
+      transform: scale(0, 1);
+      transition: transform .3s;
+      @if $dir == left-right or $dir == right-in-left {
+        transform-origin: left top;
+      } @else if $dir == right-left or $dir == left-in-right {
+        transform-origin: right top;
+      } @else {
+        transform-origin: center top;
+      }
+    }
+  }
+  &:hover::after {
+    @if $type == fade {
+      bottom: $weight * -2;
+      opacity: 1;
+      visibility: visible;
+    } @else if $type == slide {
+      @if $dir == left-in-right {
+        transform-origin: left top;
+      } @else if $dir == right-in-left {
+        transform-origin: right top;
+      }
+      transform: scale(0.7, 1); //本来はscale(1, 1)
+    }
+  }
+ }
+
+@mixin animation(
+  $name,
+  $duration: 1s,
+  $timing-function: ease,
+  $delay: 0s,
+  $iteration-count: 1,
+  $direction: normal,
+  $fill-mode: forwards
+) {
+  animation: {
+    name: $name;
+    duration: $duration;
+    timing-function: $timing-function;
+    delay: $delay;
+    iteration-count: $iteration-count;
+    direction: $direction;
+    fill-mode: $fill-mode;
+  }
+}
+
+@mixin p-base($which: before, $top: 0, $left: 0, $content: "", $position: absolute, $width: 100%, $height: 100%, $display: block) {
+  &::#{$which} {
+    display: $display;
+    content: $content;
+    position: $position;
+    top: $top;
+    left: $left;
+    width: $width;
+    height: $height;
+    @content;
+  }
+}

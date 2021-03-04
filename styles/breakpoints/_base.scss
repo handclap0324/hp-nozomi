@@ -1,0 +1,46 @@
+/******************************************************************
+
+Stylesheet: ベーススタイル
+
+******************************************************************/
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: $fontBase;
+}
+
+img {
+  margin   : 0 auto;
+  padding  : 0;
+  max-width: 100%;
+  height   : auto;
+  display  : block;
+  //vertical-align: bottom;
+}
+
+h1,h2,h3,h4 {
+  @include fontSize(20);
+}
+
+a {
+  // @include link-color(adjust-hue($colorMain, 45deg));
+  @include link-color($colorMain);
+  transition     : 0.3s;
+  text-decoration: none;
+  display        : block;
+  word-break     : break-all; //URL英文字の折り返し
+}
+
+li {
+  list-style: none;
+}
+
+
+
+
+
+
+
+

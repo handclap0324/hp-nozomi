@@ -1,0 +1,33 @@
+header {
+
+    .font-size-area{
+        background-color: $colorBg;
+        max-width: 250px;
+        padding: .5em;
+        margin: 0 0 0 auto;
+    }
+
+    .font-size-title{
+        margin: 0 0 .5em 0;
+        text-align: center;
+        @include fontSize(14);
+    }
+
+    .font-size-button {
+        background-color: #fff;
+        border-color: $colorMain;
+        @include fontSize(16);
+        width: 85px;
+        border-radius: 6px;
+        outline: none;
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+
+    .font-size-button.active {
+        color: #fff;
+        background-color: $colorSub3;
+    }
+}
