@@ -7,11 +7,11 @@
  
  // Meadia query
  
- $breakpoint_pc: 1080px;
+ $breakpoint_pc: 1280px;
  $breakpoint_tb: 767px;
  $breakpoint_tb_up: 768px;
  $breakpoint_sp: 640px;
- $breakpoint_sp2: 320px;
+ $breakpoint_sp_small: 320px;
  
  @mixin max-screen($breakPoint) {
     @media screen and (max-width: $breakPoint) {

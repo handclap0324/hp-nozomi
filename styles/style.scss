@@ -10,6 +10,10 @@
 @import "breakpoints/base";
 @import "breakpoints/layout";
 
+@import 'parts/header';
+@import 'parts/footer';
+@import "parts/hero";
+
 @media (min-width: 480px) {
   @import "breakpoints/480up";
 }
@@ -35,5 +39,3 @@
   @import "breakpoints/print";
 }
 
-
-@import 'parts/header';

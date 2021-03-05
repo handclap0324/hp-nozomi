@@ -1,0 +1,39 @@
+
+
+footer {
+
+    background-color: $colorSub;
+    padding-top: 2em;
+
+    .footer-inner-address-text {
+        margin: 0;
+        line-height: 1.35;
+
+        &:nth-child(2) {
+            margin-bottom: 0.25em;
+        }
+    }
+
+    .footer-inner-logo {
+        margin-top: 2em;
+
+        img{
+            margin: 0 0 0 auto;
+        }
+    }
+
+    .copyright {
+        text-align: center;
+        line-height: 1.2;
+        margin: 0;
+        padding: 2em 0 1em 0;
+    }
+
+    @media print, screen and (min-width: $breakpoint-tb-up) {
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+    }
+}

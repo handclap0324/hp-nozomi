@@ -21,9 +21,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const textContent = this.textContent;
             document.querySelector('html').style.fontSize = fontSize + 'px';
             sessionStorage.setItem('fontSize', textContent);
-            
-            toggleClass(fontSizebutton, 'active');
 
+            if(!this.classList.contains('active')) {
+                toggleClass(fontSizebutton, 'active');
+            }
         });
     }
 
@@ -33,7 +34,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+
+    //copyright 今年の年を取得
+    const thisYear = document.getElementById('thisyear-js');
+    thisYear.textContent = new Date().getFullYear();
+
 });
+
+
+
 
 
 

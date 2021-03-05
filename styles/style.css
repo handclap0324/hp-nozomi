@@ -778,8 +778,18 @@ a:hover {
   text-decoration: none;
 }
 
+ol, ul, dl {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
 li {
   list-style: none;
+}
+
+.dib {
+  display: inline-block;
 }
 
 .container {
@@ -787,65 +797,47 @@ li {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 1280px) {
+  .container {
+    padding: 0 .5em;
+  }
+}
+
 aside {
   background-color: #E5EAFA;
 }
 
-@media (min-width: 480px) {
-  /******************************************************************
-
-Stylesheet: 480px以上(スマホの横向き)のモニタで適用
-
-******************************************************************/
+aside ul {
+  padding: 2em 0;
 }
 
-@media (min-width: 600px) {
-  /******************************************************************
-
-Stylesheet: 600px以上のタブレットやモニタで適用
-
-******************************************************************/
+@media screen and (min-width: 768px) {
+  aside ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  aside ul li {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
 }
 
-@media (min-width: 960px) {
-  /******************************************************************
-
-Stylesheet: 960px以上のモニタで適用
-
-******************************************************************/
+aside ul li {
+  padding: 1em;
 }
 
-@media (min-width: 1280px) {
-  /******************************************************************
-
-Stylesheet: 1280px以上のモニタで適用
-
-******************************************************************/
-}
-
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  /******************************************************************
-
-Stylesheet: Retinaディスプレイで適用
-
-******************************************************************/
-  /* 
-
-EXAMPLE 
-.icon {
-	background: url(images/test@2x.png) no-repeat;
-	background-size: 24px 24px;
-}
-
-*/
-}
-
-@media print {
-  /******************************************************************
-
-Stylesheet: プリンタのみに適用
-
-******************************************************************/
+aside ul li a {
+  border: 1px solid #00A440;
+  text-align: center;
+  padding: 2.5em;
+  background-color: #fff;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 header .container-header {
@@ -903,6 +895,7 @@ header nav {
 
 header nav ul li a {
   color: #fff;
+  font-weight: bold;
 }
 
 @media print, screen and (min-width: 768px) {
@@ -926,5 +919,109 @@ header nav ul li a {
   header nav ul li.current a {
     color: #00A440;
   }
+}
+
+footer {
+  background-color: #FFFD98;
+  padding-top: 2em;
+}
+
+footer .footer-inner-address-text {
+  margin: 0;
+  line-height: 1.35;
+}
+
+footer .footer-inner-address-text:nth-child(2) {
+  margin-bottom: 0.25em;
+}
+
+footer .footer-inner-logo {
+  margin-top: 2em;
+}
+
+footer .footer-inner-logo img {
+  margin: 0 0 0 auto;
+}
+
+footer .copyright {
+  text-align: center;
+  line-height: 1.2;
+  margin: 0;
+  padding: 2em 0 1em 0;
+}
+
+@media print, screen and (min-width: 768px) {
+  footer .footer-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+}
+
+.container-hero {
+  padding: 0;
+}
+
+@media (min-width: 480px) {
+  /******************************************************************
+
+Stylesheet: 480px以上(スマホの横向き)のモニタで適用
+
+******************************************************************/
+}
+
+@media (min-width: 600px) {
+  /******************************************************************
+
+Stylesheet: 600px以上のタブレットやモニタで適用
+
+******************************************************************/
+}
+
+@media (min-width: 960px) {
+  /******************************************************************
+
+Stylesheet: 960px以上のモニタで適用
+
+******************************************************************/
+}
+
+@media (min-width: 1280px) {
+  /******************************************************************
+
+Stylesheet: 1280px以上のモニタで適用
+
+******************************************************************/
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /******************************************************************
+
+Stylesheet: Retinaディスプレイで適用
+
+******************************************************************/
+  /* 
+
+EXAMPLE 
+.icon {
+	background: url(images/test@2x.png) no-repeat;
+	background-size: 24px 24px;
+}
+
+*/
+}
+
+@media print {
+  /******************************************************************
+
+Stylesheet: プリンタのみに適用
+
+******************************************************************/
 }
 /*# sourceMappingURL=style.css.map */

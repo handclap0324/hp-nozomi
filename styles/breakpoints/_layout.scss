@@ -2,9 +2,48 @@
 .container {
     max-width: 1280px;
     margin: 0 auto;
+
+    @media screen and (max-width: $breakpoint-pc) {
+        padding: 0 .5em;
+    }
 }
 
 
 aside {
     background-color: $colorBg;
+
+    ul {
+
+        padding: 2em 0;
+
+        @media screen and (min-width: $breakpoint-tb-up) {
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                flex-basis: 50%;
+                flex-shrink: 0;
+            }
+
+        }
+
+        li {
+
+            padding: 1em;
+
+
+
+            a{
+                border: 1px solid $colorMain;
+                text-align: center;
+                padding: 2.5em;
+                background-color: $colorWhite;
+                max-width: 500px;
+                margin: 0 auto;
+    
+            }
+
+        } 
+            
+    }
 }
