@@ -4,6 +4,10 @@ header {
         display: flex;
         justify-content: space-between;
 
+        @media print, screen and (max-width: $breakpoint-pc) {
+            padding-left: 1em;
+        }
+
         .logo-area {
 
             padding-top: .5em;

@@ -4,8 +4,12 @@
     margin: 0 auto;
 
     @media screen and (max-width: $breakpoint-pc) {
-        padding: 0 .5em;
+        padding: 0 1em;
     }
+}
+
+.container-no-padding {
+    padding: 0;
 }
 
 

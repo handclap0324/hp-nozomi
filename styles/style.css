@@ -799,8 +799,12 @@ li {
 
 @media screen and (max-width: 1280px) {
   .container {
-    padding: 0 .5em;
+    padding: 0 1em;
   }
+}
+
+.container-no-padding {
+  padding: 0;
 }
 
 aside {
@@ -847,6 +851,12 @@ header .container-header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media print, screen and (max-width: 1280px) {
+  header .container-header {
+    padding-left: 1em;
+  }
 }
 
 header .container-header .logo-area {
@@ -962,10 +972,6 @@ footer .copyright {
         -ms-flex-align: end;
             align-items: flex-end;
   }
-}
-
-.container-hero {
-  padding: 0;
 }
 
 @media (min-width: 480px) {
