@@ -748,7 +748,7 @@ html {
 }
 
 body {
-  font-family: "Roboto", "Droid Sans", "Arial", "游ゴシック", "YuGothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", sans-serif;
+  font-family: "Noto Sans JP", "Roboto", "Droid Sans", "Arial", "游ゴシック", "YuGothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", sans-serif;
 }
 
 img {
@@ -759,7 +759,12 @@ img {
   display: block;
 }
 
-h1, h2, h3, h4 {
+h2 {
+  font-size: 25px;
+  font-size: 1.5625rem;
+}
+
+h3, h4 {
   font-size: 20px;
   font-size: 1.25rem;
 }
@@ -837,12 +842,15 @@ aside ul {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   aside ul li {
     -ms-flex-preferred-size: 50%;
         flex-basis: 50%;
     -ms-flex-negative: 0;
         flex-shrink: 0;
+    max-width: 530px;
   }
 }
 
@@ -893,7 +901,7 @@ aside ul li a {
 }
 
 .pdf-list a dl dd {
-  background: url("/img/pdf_icon.png") no-repeat right 5% center;
+  background: url(".././img/pdf_icon.png") no-repeat right 5% center;
   background-size: 45px 52px;
   width: 60%;
   border-left: 1px solid #333;
@@ -1041,6 +1049,46 @@ footer .copyright {
   }
 }
 
+.table-news {
+  max-width: 960px;
+  margin: 0 auto auto 0;
+}
+
+.table-news tr {
+  border: 1px solid #ddd;
+}
+
+.table-news th, .table-news td {
+  padding: 1em;
+}
+
+.table-news th {
+  white-space: nowrap;
+}
+
+.pdf-list.pamphlet-pdf {
+  padding: 0em 1em 3em 1em;
+  margin-top: -1em;
+}
+
+.pdf-list.pamphlet-pdf a {
+  margin: 0 auto;
+  padding: 2.5em 0;
+  max-width: 1140px;
+  text-align: center;
+  border: 1px solid #9d9d9d;
+  border-radius: 2px;
+  background: url(".././img/pdf_icon.png") no-repeat right 5% center;
+  background-size: 45px 52px;
+  background-color: #fff;
+}
+
+@media (max-width: 767px) {
+  .pdf-list.pamphlet-pdf a {
+    max-width: 502px;
+  }
+}
+
 .table-facility {
   max-width: 960px;
   margin: 0 auto;
@@ -1073,6 +1121,14 @@ footer .copyright {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.contact-tel p {
+  font-size: 25px;
+}
+
+.contact-mail .mail-img {
+  max-width: 480px;
 }
 
 @media (min-width: 480px) {

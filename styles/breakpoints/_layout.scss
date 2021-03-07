@@ -38,10 +38,12 @@ aside {
         @media screen and (min-width: $breakpoint-tb-up) {
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-around;
 
             li {
                 flex-basis: 50%;
                 flex-shrink: 0;
+                max-width: 530px;
             }
 
         }
@@ -86,7 +88,6 @@ aside {
         border: 1px solid $colorFont;
         border-radius: 2px;
         
-
         dl {
             display: flex;
 
@@ -98,7 +99,7 @@ aside {
             }
     
             dd {
-                background: url('/img/pdf_icon.png') no-repeat right 5% center;
+                background: url('.././img/pdf_icon.png') no-repeat right 5% center;
                 background-size: 45px 52px;
                 width: 60%;
                 border-left: 1px solid $colorFont;
@@ -109,6 +110,5 @@ aside {
             }
         }
     }
-
 }
 

@@ -14,8 +14,11 @@
 @import 'parts/footer';
 @import "parts/hero";
 
+@import "pages/frontpage";
 @import "pages/facility";
 @import "pages/project";
+@import "pages/contact";
+
 
 @media (min-width: 480px) {
   @import "breakpoints/480up";
