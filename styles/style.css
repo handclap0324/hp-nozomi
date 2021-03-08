@@ -770,7 +770,7 @@ h3, h4 {
 }
 
 a {
-  color: #9d9d9d;
+  color: #00A440;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   text-decoration: none;
@@ -779,7 +779,7 @@ a {
 }
 
 a:hover {
-  color: #b7b7b7;
+  color: #00d754;
   text-decoration: none;
 }
 
@@ -859,7 +859,7 @@ aside ul li {
 }
 
 aside ul li a {
-  border: 1px solid #9d9d9d;
+  border: 1px solid #00A440;
   text-align: center;
   padding: 2.5em;
   background-color: #fff;
@@ -936,6 +936,11 @@ header .container-header .logo-area {
   padding-top: .5em;
 }
 
+header .container-header .logo-area-img {
+  max-width: 230px;
+  margin-bottom: .85em;
+}
+
 header .container-header .logo-area h1 {
   font-size: 12px;
   margin: 0;
@@ -955,7 +960,7 @@ header .container-header .font-size-title {
 
 header .container-header .font-size-button {
   background-color: #fff;
-  border-color: #9d9d9d;
+  border-color: #00A440;
   font-size: 16px;
   width: 85px;
   border-radius: 6px;
@@ -969,11 +974,11 @@ header .container-header .font-size-button:hover {
 
 header .container-header .font-size-button.active {
   color: #fff;
-  background-color: #909394;
+  background-color: #006E90;
 }
 
 header nav {
-  background-color: #9d9d9d;
+  background-color: #00A440;
 }
 
 header nav ul li a {
@@ -998,16 +1003,16 @@ header nav ul li a {
     padding: 1em 0;
   }
   header nav ul li.current {
-    background-color: #d5d5d5;
-    color: #9d9d9d;
+    background-color: #FFFD98;
+    color: #00A440;
   }
   header nav ul li.current a {
-    color: #9d9d9d;
+    color: #00A440;
   }
 }
 
 footer {
-  background-color: #d5d5d5;
+  background-color: #FFFD98;
   padding-top: 2em;
 }
 
@@ -1022,6 +1027,7 @@ footer .footer-inner-address-text:nth-child(2) {
 
 footer .footer-inner-logo {
   margin-top: 2em;
+  max-width: 200px;
 }
 
 footer .footer-inner-logo img {
@@ -1076,7 +1082,7 @@ footer .copyright {
   padding: 2.5em 0;
   max-width: 1140px;
   text-align: center;
-  border: 1px solid #9d9d9d;
+  border: 1px solid #00A440;
   border-radius: 2px;
   background: url(".././img/pdf_icon.png") no-repeat right 5% center;
   background-size: 45px 52px;

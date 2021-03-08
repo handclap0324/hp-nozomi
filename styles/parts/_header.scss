@@ -12,6 +12,11 @@ header {
 
             padding-top: .5em;
 
+            &-img {
+                max-width: 230px;
+                margin-bottom: .85em;
+            }
+
             h1 {
                 font-size: 12px;
                 margin: 0;
