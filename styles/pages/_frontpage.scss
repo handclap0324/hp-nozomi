@@ -1,0 +1,45 @@
+
+.table-news {
+
+    max-width: 960px;
+    margin: 0 auto auto 0;
+    
+    tr {
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        padding: 1em;
+    }
+
+    th {
+        white-space: nowrap;
+    }
+}
+
+
+//パンフレットダウンロード
+.pdf-list.pamphlet-pdf {
+    // border: 1px solid red;
+    padding: 0em 1em 3em 1em;
+    margin-top: -1em;
+
+    a{
+        margin: 0 auto;
+        padding: 2.5em 0;
+        max-width: 1140px;
+        text-align: center;
+        
+        border: 1px solid $colorMain;
+        border-radius: 2px;
+        
+        background: url('.././img/pdf_icon.png') no-repeat right 5% center;
+        background-size: 45px 52px;
+        background-color: $colorWhite;
+
+        @media (max-width: $breakpoint_tb) {
+            //background-size: 30px 35px;
+            max-width: 502px;
+        }
+    }
+}

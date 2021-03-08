@@ -6,11 +6,26 @@
     @media screen and (max-width: $breakpoint-pc) {
         padding: 0 1em;
     }
+
+    &-main {
+        padding: 2em 0;
+
+        h2{
+            text-align: center;
+            margin-bottom: 2em;
+        }
+
+        @media screen and (max-width: $breakpoint-pc) {
+            padding: 2em 1em;
+        }
+    }
+
+
+    &-no-padding {
+        padding: 0;
+    }
 }
 
-.container-no-padding {
-    padding: 0;
-}
 
 
 aside {
@@ -23,10 +38,12 @@ aside {
         @media screen and (min-width: $breakpoint-tb-up) {
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-around;
 
             li {
                 flex-basis: 50%;
                 flex-shrink: 0;
+                max-width: 530px;
             }
 
         }
@@ -34,8 +51,6 @@ aside {
         li {
 
             padding: 1em;
-
-
 
             a{
                 border: 1px solid $colorMain;
@@ -51,3 +66,49 @@ aside {
             
     }
 }
+
+//仮css
+.photo-space{
+    padding: 2em;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: #ddd;
+}
+
+
+.pdf-list {
+    // border: 1px solid red;
+    padding: 0 1em;
+
+    a{
+        margin: 0 auto 1em auto;
+        padding: .5em 0;
+        max-width: 960px;
+        border: 1px solid $colorFont;
+        border-radius: 2px;
+        
+        dl {
+            display: flex;
+
+            dt, dd {
+                padding: 1em;
+                margin: 0;
+                text-align: center;
+                width: 40%;
+            }
+    
+            dd {
+                background: url('.././img/pdf_icon.png') no-repeat right 5% center;
+                background-size: 45px 52px;
+                width: 60%;
+                border-left: 1px solid $colorFont;
+
+                @media (max-width: $breakpoint_tb) {
+                    background-size: 30px 35px;
+                }
+            }
+        }
+    }
+}
+
