@@ -3,6 +3,22 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    //toggle menu
+    const toggle = document.getElementById('js-toggle');
+    toggle.addEventListener('click', function() {
+        const nav = document.getElementById('js-nav');
+        let menuText = document.getElementById('js-menuText');
+        
+        toggle.classList.toggle('navOpen');
+        nav.classList.toggle('navOpen');
+
+        if(nav.classList.contains('navOpen')) {
+            menuText.textContent = 'close';
+        } else {
+            menuText.textContent = 'menu';
+        }
+    });
+
 
     //フォントサイズ変更
     const fontSizebutton = document.querySelectorAll('.font-size-button');

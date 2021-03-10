@@ -28,6 +28,10 @@ header {
             background-color: $colorBg;
             min-width: 225px;
             padding: 1em 0em .5em 1.5em;
+
+            @media (max-width: 960px) {
+                display: none;
+            }
         }
     
         .font-size-title{
@@ -56,6 +60,12 @@ header {
         }
     }
 
+/////////////////////////////////////////////////////////////////////////
+
+//                       Navigation                                    //
+
+/////////////////////////////////////////////////////////////////////////
+
     nav {
         background-color: $colorMain;
 
@@ -64,37 +74,284 @@ header {
                 color: $colorWhite;
                 font-weight: bold;
                 @include fontSize(16);
+
+                span{
+                    display: block;
+                    font-size: 70%;
+                    font-weight: normal;
+                }
             }
         }
     }
 
     @media print, screen and (min-width: $breakpoint_tb_up) {
-        nav {
-            ul {
-                display: flex;
-                padding: 0;
 
-                li {
-                    width: 20%;
-                    text-align: center;
+        .nav-area {
+            flex-basis: 55%;
+            //border: 1px solid yellow;
+            margin: 0 0 0 auto;
 
-                    a {
-                        padding: 1em 0;
-                    }
-                }
+            .nav-area-access {
+                border: 2px solid $colorMain;
+                width: 175px;
+                margin: .5em 5% 0 auto;
+                border-radius: 6px;
                 
-
-                li.current {
-                    background-color: $colorSub;
-                    color: $colorMain;
-
-                    a {
+                a{
+                    color: lighten($colorFont, 25%);
+                    text-align: center;
+                    font-size: 14px;
+                    padding: .25em 0;
+                    &:hover {
                         color: $colorMain;
                     }
+
+                    span {
+                        padding-left: .5em;
+                    }
+
+                    &::before {
+                        @include fontawesome();
+                        content: '\f3c5';
+                        margin-right: 5px;
+                    }
                 }
+            }
+
+            nav {
+                background-color: transparent;
+                // border: 1px solid red;
+                ul {
+                    display: flex;
+                    padding: 0 1em 0 0;
+    
+                    li {
+                        width: 20%;
+                        text-align: center;
+                        padding-top: .25em;
+                        padding-bottom: .5em;
+    
+                        a {
+                            padding: .3em 0 .3em 0;
+                            color: $colorFont;
+                            position: relative;
+                            
+                            &::before {
+                                position:absolute;
+                                content: '';
+                                top: 0;
+                                right: 0;
+                                width: 25px;
+                                height: 25px;
+                                border-top: 2px solid $colorMain;
+                                border-right: 2px solid $colorMain;
+                                transform: translate(-50px, 12px);
+                                opacity: 0;
+                                transition: all .2s ease-in-out;
+
+                            }
+
+                            &::after {
+                                position:absolute;
+                                content: '';
+                                bottom: 0;
+                                left: 0;
+                                width: 25px;
+                                height: 25px;
+                                border-bottom: 2px solid $colorMain;
+                                border-left: 2px solid $colorMain;
+                                transform: translate(50px, -12px);
+                                opacity: 0;
+                                transition: all .2s ease-in-out;
+
+                            }
+
+                            &:hover {
+
+                                color: $colorMain;
+
+                                &::before,
+                                &::after {
+                                    opacity: 1;
+                                    transform: translate(0, 0);
+                                }
+
+                            }
+                        }
+                    }
+                }
+    
+            }
+
+            #js-menuText{
+                display: none;
             }
         }
     }
 
+    @media (max-width: $breakpoint-tb) {
+        .nav-area {
+            
+            .nav-area-access {
+                display: none;
+            }
 
+            nav {
+                display: none;
+                opacity: 0;
+                background-color: $colorMain;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                
+                z-index: 100;
+                padding: 2em;
+
+                ul {
+                    padding: 3em 0;
+    
+                    li {
+                        width: 100%;
+                        text-align: center;
+                        opacity: 0;
+                        transform: translateY(-15%);
+    
+                        a {
+                            padding: 1em 0 1em 0;
+                            border-bottom: 1px solid white;
+
+                            &:hover {
+                                color: $colorWhite;
+                            }
+                        }
+
+                        span{
+                            //padding-top: .2em
+                        }
+                    }
+                }
+            }
+        }
+
+        /*--toggle-*/
+
+        #js-toggle {
+            position: fixed;
+            top: 25px;
+            right: 15px;
+            width: 44px;
+            height: 46px;
+            background-color: #fff;
+            box-shadow: 0px 0px 8px -3px $colorMain;
+            border-radius: 5px;
+            padding: 5px;
+            overflow: hidden;
+            z-index: 3001;
+
+            span.navBorder {
+                content: "";
+                position: absolute;
+                display: block;
+                left: 8px;
+                width: 28px;
+                height: 2px;
+                background-color: $colorMain;
+            }
+    
+            span:first-child {
+                top: 10px;
+                transition: transform .2s ease-in;
+            }
+    
+            span:nth-child(2) {
+                top: 18px;
+                transition: transform .1s ease-in, opacity .2s ease-in;
+            }
+    
+            span:nth-child(3) {
+                top: 26px;
+                transition: transform .2s ease-in;
+            }
+        }
+
+        /*--navOpen--*/
+
+        #js-toggle.navOpen {
+
+            span:first-child {
+                top: 18px;
+                transform: rotate(45deg);
+            }
+        
+            span:nth-child(2) {
+                transform: translateX(-120%);
+                opacity: 0;
+            }
+        
+            span:nth-child(3) {
+                top: 18px;
+                transform: rotate(-45deg);
+            }
+        }
+
+        nav.navOpen {
+            display: block;
+            animation: navOpacity .2s linear forwards;
+
+            #toggle.navOpen {
+                box-shadow: none;
+            }
+            
+            ul.menu li {
+                animation: navLiMove .5s ease-in-out forwards;
+
+                &:nth-child(1) {
+                    animation-delay: 0.2s;
+                }
+    
+                &:nth-child(2) {
+                    animation-delay: 0.4s;
+                }
+    
+                &:nth-child(3) {
+                    animation-delay: 0.6s;
+                }
+    
+                &:nth-child(4) {
+                    animation-delay: .8s;
+                }
+
+                &:nth-child(5) {
+                    animation-delay: 1.0s;
+                }
+            }
+        }
+        
+        @keyframes navOpacity {
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes navLiMove {
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        #js-menuText {
+            position: absolute;
+            display: block;
+            width: 100%;
+            left: 0px;
+            bottom: 2px;
+            text-align: center;
+            letter-spacing: 0.05em;
+            color: $colorMain;
+            font-size: 10px;
+        }
+    }
 }

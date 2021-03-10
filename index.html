@@ -20,6 +20,7 @@
     <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">-->
 
     <link rel='stylesheet' id='font-awesome-css'  href='https://use.fontawesome.com/releases/v5.6.1/css/all.css?ver=20200327' type='text/css' media='all' />
     <link rel="stylesheet" href="styles/style.css">
@@ -36,13 +37,33 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:locale" content="ja_JP" />
   </head>
-<body>
 
+<body>
   <header>
     <div class="container container-header container-no-padding">
       <div class="logo-area">
         <h1>社会福祉法人 兵庫県社会福祉事業団</h1>
         <p class="logo-area-img"><a href="index.html"><img src="img/logo.png" alt="のぞみの家ロゴ"></a></p>
+      </div>
+      <div class="nav-area">
+        <div class="nav-area-access">
+          <a href="facility.html#accessmap">アクセス<span>access</span></a>
+        </div>
+        <div id="js-toggle">
+          <span class="navBorder"></span>
+          <span class="navBorder"></span>
+          <span class="navBorder"></span>
+          <span id="js-menuText">menu</span>
+        </div>
+        <nav id="js-nav" >
+          <ul class="menu container container-no-padding">
+            <li><a href="index.html">ホーム<span>Home</span></a></li>
+            <li><a href="facility.html">施設案内<span>Abount facility</span></a></li>
+            <li><a href="project.html">事業案内<span>About project</span></a></li>
+            <li><a href="dailylife.html">生活案内<span>About dailylife</span></a></li>
+            <li><a href="use.html">利用案内<span>About use</span></a></li>
+          </ul>
+        </nav>
       </div>
       <div class="font-size-area">
         <p class="font-size-title">[ 文字サイズ ]</p>
@@ -50,15 +71,6 @@
         <button class="font-size-button font-size-large" data-fontsize="18">拡大</button>
       </div>
     </div>
-    <nav>
-      <ul class="container container-no-padding">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="facility.html">施設案内</a></li>
-        <li><a href="project.html">事業案内</a></li>
-        <li><a href="dailylife.html">生活案内</a></li>
-        <li><a href="use.html">利用案内</a></li>
-      </ul>
-    </nav>
   </header>
 
   <div class="hero">

@@ -748,7 +748,8 @@ html {
 }
 
 body {
-  font-family: "Noto Sans JP", "Roboto", "Droid Sans", "Arial", "游ゴシック", "YuGothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", sans-serif;
+  font-family: "Noto Serif JP", "Roboto", "Droid Sans", "Arial", "游ゴシック", "YuGothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", sans-serif;
+  position: relative;
 }
 
 img {
@@ -952,6 +953,12 @@ header .container-header .font-size-area {
   padding: 1em 0em .5em 1.5em;
 }
 
+@media (max-width: 960px) {
+  header .container-header .font-size-area {
+    display: none;
+  }
+}
+
 header .container-header .font-size-title {
   margin: 0 0 .5em 0;
   text-align: center;
@@ -988,26 +995,269 @@ header nav ul li a {
   font-size: 1rem;
 }
 
+header nav ul li a span {
+  display: block;
+  font-size: 70%;
+  font-weight: normal;
+}
+
 @media print, screen and (min-width: 768px) {
-  header nav ul {
+  header .nav-area {
+    -ms-flex-preferred-size: 55%;
+        flex-basis: 55%;
+    margin: 0 0 0 auto;
+  }
+  header .nav-area .nav-area-access {
+    border: 2px solid #00A440;
+    width: 175px;
+    margin: .5em 5% 0 auto;
+    border-radius: 6px;
+  }
+  header .nav-area .nav-area-access a {
+    color: #737373;
+    text-align: center;
+    font-size: 14px;
+    padding: .25em 0;
+  }
+  header .nav-area .nav-area-access a:hover {
+    color: #00A440;
+  }
+  header .nav-area .nav-area-access a span {
+    padding-left: .5em;
+  }
+  header .nav-area .nav-area-access a::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: relative;
+    content: '\f3c5';
+    margin-right: 5px;
+  }
+  header .nav-area nav {
+    background-color: transparent;
+  }
+  header .nav-area nav ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 0;
+    padding: 0 1em 0 0;
   }
-  header nav ul li {
+  header .nav-area nav ul li {
     width: 20%;
     text-align: center;
+    padding-top: .25em;
+    padding-bottom: .5em;
   }
-  header nav ul li a {
-    padding: 1em 0;
+  header .nav-area nav ul li a {
+    padding: .3em 0 .3em 0;
+    color: #333;
+    position: relative;
   }
-  header nav ul li.current {
-    background-color: #FFFD98;
+  header .nav-area nav ul li a::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    border-top: 2px solid #00A440;
+    border-right: 2px solid #00A440;
+    -webkit-transform: translate(-50px, 12px);
+            transform: translate(-50px, 12px);
+    opacity: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  header .nav-area nav ul li a::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    border-bottom: 2px solid #00A440;
+    border-left: 2px solid #00A440;
+    -webkit-transform: translate(50px, -12px);
+            transform: translate(50px, -12px);
+    opacity: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  header .nav-area nav ul li a:hover {
     color: #00A440;
   }
-  header nav ul li.current a {
+  header .nav-area nav ul li a:hover::before, header .nav-area nav ul li a:hover::after {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  header .nav-area #js-menuText {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    /*--toggle-*/
+    /*--navOpen--*/
+  }
+  header .nav-area .nav-area-access {
+    display: none;
+  }
+  header .nav-area nav {
+    display: none;
+    opacity: 0;
+    background-color: #00A440;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    padding: 2em;
+  }
+  header .nav-area nav ul {
+    padding: 3em 0;
+  }
+  header .nav-area nav ul li {
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    -webkit-transform: translateY(-15%);
+            transform: translateY(-15%);
+  }
+  header .nav-area nav ul li a {
+    padding: 1em 0 1em 0;
+    border-bottom: 1px solid white;
+  }
+  header .nav-area nav ul li a:hover {
+    color: #fff;
+  }
+  header #js-toggle {
+    position: fixed;
+    top: 25px;
+    right: 15px;
+    width: 44px;
+    height: 46px;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 0px 8px -3px #00A440;
+            box-shadow: 0px 0px 8px -3px #00A440;
+    border-radius: 5px;
+    padding: 5px;
+    overflow: hidden;
+    z-index: 3001;
+  }
+  header #js-toggle span.navBorder {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 8px;
+    width: 28px;
+    height: 2px;
+    background-color: #00A440;
+  }
+  header #js-toggle span:first-child {
+    top: 10px;
+    -webkit-transition: -webkit-transform .2s ease-in;
+    transition: -webkit-transform .2s ease-in;
+    transition: transform .2s ease-in;
+    transition: transform .2s ease-in, -webkit-transform .2s ease-in;
+  }
+  header #js-toggle span:nth-child(2) {
+    top: 18px;
+    -webkit-transition: opacity .2s ease-in, -webkit-transform .1s ease-in;
+    transition: opacity .2s ease-in, -webkit-transform .1s ease-in;
+    transition: transform .1s ease-in, opacity .2s ease-in;
+    transition: transform .1s ease-in, opacity .2s ease-in, -webkit-transform .1s ease-in;
+  }
+  header #js-toggle span:nth-child(3) {
+    top: 26px;
+    -webkit-transition: -webkit-transform .2s ease-in;
+    transition: -webkit-transform .2s ease-in;
+    transition: transform .2s ease-in;
+    transition: transform .2s ease-in, -webkit-transform .2s ease-in;
+  }
+  header #js-toggle.navOpen span:first-child {
+    top: 18px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  header #js-toggle.navOpen span:nth-child(2) {
+    -webkit-transform: translateX(-120%);
+            transform: translateX(-120%);
+    opacity: 0;
+  }
+  header #js-toggle.navOpen span:nth-child(3) {
+    top: 18px;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  header nav.navOpen {
+    display: block;
+    -webkit-animation: navOpacity .2s linear forwards;
+            animation: navOpacity .2s linear forwards;
+  }
+  header nav.navOpen #toggle.navOpen {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  header nav.navOpen ul.menu li {
+    -webkit-animation: navLiMove .5s ease-in-out forwards;
+            animation: navLiMove .5s ease-in-out forwards;
+  }
+  header nav.navOpen ul.menu li:nth-child(1) {
+    -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+  }
+  header nav.navOpen ul.menu li:nth-child(2) {
+    -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s;
+  }
+  header nav.navOpen ul.menu li:nth-child(3) {
+    -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+  }
+  header nav.navOpen ul.menu li:nth-child(4) {
+    -webkit-animation-delay: .8s;
+            animation-delay: .8s;
+  }
+  header nav.navOpen ul.menu li:nth-child(5) {
+    -webkit-animation-delay: 1.0s;
+            animation-delay: 1.0s;
+  }
+  @-webkit-keyframes navOpacity {
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes navOpacity {
+    100% {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes navLiMove {
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes navLiMove {
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  header #js-menuText {
+    position: absolute;
+    display: block;
+    width: 100%;
+    left: 0px;
+    bottom: 2px;
+    text-align: center;
+    letter-spacing: 0.05em;
     color: #00A440;
+    font-size: 10px;
   }
 }
 
@@ -1053,6 +1303,10 @@ footer .copyright {
         -ms-flex-align: end;
             align-items: flex-end;
   }
+}
+
+.hero {
+  background-color: #00A440;
 }
 
 .table-news {
@@ -1119,6 +1373,7 @@ footer .copyright {
   padding-bottom: 45%;
   overflow: hidden;
   margin: 0 auto;
+  background: url(.././img/camera-loader.gif) no-repeat center;
 }
 
 .googlemap iframe {
