@@ -21,13 +21,102 @@ img {
   //vertical-align: bottom;
 }
 
+section {
+  margin-bottom: 6em;
+}
+
+////////////////////////////////
+//   h2  見出し   //////////////
+////////////////////////////////
+
 h2 {
   @include fontSize(25);
+  position: relative;
+  max-width: 275px;
+  margin: 0 auto;
+  text-align: center;
+
+  &::before {
+    position :absolute;
+    content: '';
+    top: 50%;
+    left: 0%;
+    width: 50px;
+    height: 2px;
+    background-color: $colorFont;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    position :absolute;
+    content: '';
+    top: 50%;
+    right: 0%;
+    width: 50px;
+    height: 2px;
+    background-color: $colorFont;
+    transform: translateY(-50%);
+  }
 }
 
 h3,h4 {
   @include fontSize(20);
 }
+
+
+////////////////////////////////
+//   h3  見出し   //////////////
+////////////////////////////////
+
+h3.underbar-heading {
+  margin-bottom : 1em;
+  padding: 1em 0 1em 1.5em;
+  border: 2px solid $colorMain;
+  position: relative;
+ 
+  span.span-heading {
+    display: block;
+    font-weight: normal;
+    @include fontSize(14);
+    color: lighten($colorFont, 50%);
+    margin-top: -.2em;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    bottom: .4em;
+    left: .5em;
+    width: 6px;
+    height: 80%;
+    background-color: $colorMain;
+  }
+
+}
+
+h3.number-heading {
+    position: relative;
+    overflow: hidden;
+    padding: .25em .5em 0.5em 85px;
+    word-break: break-all;
+    border-top: 3px solid #00A440;
+    border-radius: 10px 0 0 0;
+    margin-bottom: 1em;
+
+    span {
+      font-size: 25px;
+      position: absolute;
+      top: 0px;
+      left: 0;
+      display: block;
+      padding: 3px 20px;
+      color: #fff;
+      border-radius: 10px 0 20px 10px;
+      background: $colorMain;
+    }
+}
+
+
 
 a {
   // @include link-color(adjust-hue($colorMain, 45deg));

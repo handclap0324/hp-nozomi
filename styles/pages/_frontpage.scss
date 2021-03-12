@@ -5,20 +5,48 @@
 
 .table-news {
 
-    max-width: 960px;
-    margin: 0 auto auto 0;
+    max-width: 980px;
+    margin: 3em auto;
+
+    table {
+
+        width: 100%;
+
+        tr {
+            border: 1px solid $colorBg;
+            
+            th {
+                white-space: nowrap;
+            }
+
+            th, td {
+                padding: 1.5em .5em;
+            }
+
+            td a {
+                color: $colorFont;
+
+                &:hover {
+                    color: $colorMain;
+                }
+            }
+        
+        }
     
-    tr {
-        border: 1px solid #ddd;
-    }
+        @media print, screen and (min-width: $breakpoint-tb-up) {
+            tr {
+                border: 1px solid $colorBg;
 
-    th, td {
-        padding: 1em;
-    }
+                th, td {
+                    padding: 1.5em 2em;
+                }
+            }
 
-    th {
-        white-space: nowrap;
+
+        }
     }
+    
+
 }
 
 

@@ -17,6 +17,10 @@
     }
 }
 
+#accessmap h2 {
+    @include fontSize(20);
+}
+
 .googlemap {
     position: relative;
     max-width: $breakpoint-pc;

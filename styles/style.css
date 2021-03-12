@@ -423,6 +423,10 @@ template {
           transition-delay: 1s;
 }
 
+.hero {
+  margin-bottom: 4em;
+}
+
 /*
 .swiper-container {
   overflow: visible !important;
@@ -760,14 +764,94 @@ img {
   display: block;
 }
 
+section {
+  margin-bottom: 6em;
+}
+
 h2 {
   font-size: 25px;
   font-size: 1.5625rem;
+  position: relative;
+  max-width: 275px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2::before {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 0%;
+  width: 50px;
+  height: 2px;
+  background-color: #191919;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+h2::after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  right: 0%;
+  width: 50px;
+  height: 2px;
+  background-color: #191919;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 h3, h4 {
   font-size: 20px;
   font-size: 1.25rem;
+}
+
+h3.underbar-heading {
+  margin-bottom: 1em;
+  padding: 1em 0 1em 1.5em;
+  border: 2px solid #00A440;
+  position: relative;
+}
+
+h3.underbar-heading span.span-heading {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #999999;
+  margin-top: -.2em;
+}
+
+h3.underbar-heading::before {
+  position: absolute;
+  content: '';
+  bottom: .4em;
+  left: .5em;
+  width: 6px;
+  height: 80%;
+  background-color: #00A440;
+}
+
+h3.number-heading {
+  position: relative;
+  overflow: hidden;
+  padding: .25em .5em 0.5em 85px;
+  word-break: break-all;
+  border-top: 3px solid #00A440;
+  border-radius: 10px 0 0 0;
+  margin-bottom: 1em;
+}
+
+h3.number-heading span {
+  font-size: 25px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  display: block;
+  padding: 3px 20px;
+  color: #fff;
+  border-radius: 10px 0 20px 10px;
+  background: #00A440;
 }
 
 a {
@@ -810,7 +894,8 @@ li {
 }
 
 .container-main {
-  padding: 2em 0;
+  padding: 0;
+  margin-top: 4em;
 }
 
 .container-main h2 {
@@ -820,7 +905,7 @@ li {
 
 @media screen and (max-width: 1280px) {
   .container-main {
-    padding: 2em 1em;
+    padding: 0em 1em;
   }
 }
 
@@ -868,6 +953,11 @@ aside ul li a {
   margin: 0 auto;
 }
 
+.contents-box {
+  margin: 0 auto 4em auto;
+  max-width: 980px;
+}
+
 .photo-space {
   padding: 2em;
   text-align: center;
@@ -884,7 +974,7 @@ aside ul li a {
   margin: 0 auto 1em auto;
   padding: .5em 0;
   max-width: 960px;
-  border: 1px solid #333;
+  border: 1px solid #191919;
   border-radius: 2px;
 }
 
@@ -905,7 +995,7 @@ aside ul li a {
   background: url(".././img/pdf_icon.png") no-repeat right 5% center;
   background-size: 45px 52px;
   width: 60%;
-  border-left: 1px solid #333;
+  border-left: 1px solid #191919;
 }
 
 @media (max-width: 767px) {
@@ -1014,7 +1104,7 @@ header nav ul li a span {
     border-radius: 6px;
   }
   header .nav-area .nav-area-access a {
-    color: #737373;
+    color: #595959;
     text-align: center;
     font-size: 14px;
     padding: .25em 0;
@@ -1049,7 +1139,7 @@ header nav ul li a span {
   }
   header .nav-area nav ul li a {
     padding: .3em 0 .3em 0;
-    color: #333;
+    color: #191919;
     position: relative;
   }
   header .nav-area nav ul li a::before {
@@ -1277,7 +1367,7 @@ footer .footer-inner-address-text:nth-child(2) {
 
 footer .footer-inner-logo {
   margin-top: 2em;
-  max-width: 200px;
+  width: 200px;
 }
 
 footer .footer-inner-logo img {
@@ -1310,20 +1400,41 @@ footer .copyright {
 }
 
 .table-news {
-  max-width: 960px;
-  margin: 0 auto auto 0;
+  max-width: 980px;
+  margin: 3em auto;
 }
 
-.table-news tr {
-  border: 1px solid #ddd;
+.table-news table {
+  width: 100%;
 }
 
-.table-news th, .table-news td {
-  padding: 1em;
+.table-news table tr {
+  border: 1px solid #e1e1e2;
 }
 
-.table-news th {
+.table-news table tr th {
   white-space: nowrap;
+}
+
+.table-news table tr th, .table-news table tr td {
+  padding: 1.5em .5em;
+}
+
+.table-news table tr td a {
+  color: #191919;
+}
+
+.table-news table tr td a:hover {
+  color: #00A440;
+}
+
+@media print, screen and (min-width: 768px) {
+  .table-news table tr {
+    border: 1px solid #e1e1e2;
+  }
+  .table-news table tr th, .table-news table tr td {
+    padding: 1.5em 2em;
+  }
 }
 
 .pdf-list.pamphlet-pdf {
@@ -1364,6 +1475,11 @@ footer .copyright {
 
 .table-facility th {
   white-space: nowrap;
+}
+
+#accessmap h2 {
+  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .googlemap {
