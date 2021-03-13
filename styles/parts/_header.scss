@@ -177,6 +177,10 @@ header {
                                 }
 
                             }
+
+                            span {
+                                color: lighten($colorFont, 40%);
+                            }
                         }
                     }
                 }

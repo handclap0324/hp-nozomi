@@ -21,10 +21,6 @@ img {
   //vertical-align: bottom;
 }
 
-section {
-  margin-bottom: 6em;
-}
-
 ////////////////////////////////
 //   h2  見出し   //////////////
 ////////////////////////////////
@@ -61,6 +57,7 @@ h2 {
 
 h3,h4 {
   @include fontSize(20);
+  margin-bottom: 1em;
 }
 
 

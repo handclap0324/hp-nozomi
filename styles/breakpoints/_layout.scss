@@ -31,6 +31,7 @@
 
 aside {
     background-color: $colorBg;
+    margin-top: 6em;
 
     ul {
 
@@ -69,18 +70,18 @@ aside {
 }
 
 .contents-box {
-    margin: 0 auto 4em auto;
+    margin: 0 auto 3em auto;
     max-width: 980px;
 }
 
 //仮css
-.photo-space{
-    padding: 2em;
-    text-align: center;
-    font-size: 25px;
-    font-weight: bold;
-    color: #ddd;
-}
+// .photo-space{
+//     padding: 2em;
+//     text-align: center;
+//     font-size: 25px;
+//     font-weight: bold;
+//     color: #ddd;
+// }
 
 
 .pdf-list {
