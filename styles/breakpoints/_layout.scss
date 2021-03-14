@@ -74,14 +74,49 @@ aside {
     max-width: 980px;
 }
 
-//仮css
-// .photo-space{
-//     padding: 2em;
-//     text-align: center;
-//     font-size: 25px;
-//     font-weight: bold;
-//     color: #ddd;
-// }
+///////////////////////////////////////////////////////////
+//////    ページタイトル   ////////////////////////////////
+///////////////////////////////////////////////////////////
+
+.pagetitle {
+    background-color: $colorMain;
+    background-image: url('../img/title_bg.jpg');
+    background-position: center 23%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+
+    .container {
+        // max-width: 1280px;
+        width: 100%;
+        height: 250px;
+        position: relative;
+
+
+
+
+    }
+
+    .title-text {
+
+        position: absolute;
+        top:50%;
+        left: 50%;
+        width: 250px;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+
+        h2 {
+            color: $colorWhite;
+            
+    
+            &::after, &::before {
+                background-color: $colorWhite;
+            }
+        }
+    }
+
+}
 
 
 .pdf-list {

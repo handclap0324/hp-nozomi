@@ -1,0 +1,91 @@
+.dailywork {
+
+    .dailywork-left {
+
+        .dailywork-table {
+            border: 4px solid  $colorMain;
+            border-radius: 6px;
+            padding: 1em 0;
+            background-color: $colorSub;
+
+            table {
+                width: 100%;
+            }
+
+            th, td {
+                padding: 1em .5em ;
+                text-align: center;
+                @include fontSize(18);
+            }
+        }
+    }
+
+    .dailywork-right {
+
+        .dailywork-right-child {
+            margin-top: 1.45em;
+            padding: 1em;
+            border: 4px solid $colorSub3;
+            border-radius: 6px;
+            text-align: center;
+            @include fontSize(16);
+
+            dt, dd {
+                padding: .5em;
+            }
+
+            dt {
+                border-bottom : dotted 1px $colorSub3;
+                margin-bottom: 1em;
+                padding-bottom: 1em;
+            }
+            p{
+                border-bottom : dotted 1px $colorSub3;
+                padding: .5em .5em 1em .5em;
+                font-weight: bold;
+            }
+
+            table {
+
+                width: 100%;
+                th {
+                    width: 55%;
+                }
+
+                td {
+                    text-align: left;
+                }
+
+                tr:last-child {
+                        padding-bottom: .5em;
+                }
+            }
+        }
+    }
+
+    @media print, screen and (min-width: $breakpoint_tb_up) {
+        display: flex;
+        justify-content:space-around;
+
+        .dailywork-left {
+            flex-basis: 60%;
+            padding: 0 1em;
+    
+            table {
+                width: 100%;
+            }
+        }
+
+        .dailywork-right {
+            padding: 0 1em;
+            flex-basis: 40%;
+
+            .dailywork-right-child {
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

@@ -956,6 +956,38 @@ aside ul li a {
   max-width: 980px;
 }
 
+.pagetitle {
+  background-color: #00A440;
+  background-image: url("../img/title_bg.jpg");
+  background-position: center 23%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.pagetitle .container {
+  width: 100%;
+  height: 250px;
+  position: relative;
+}
+
+.pagetitle .title-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.pagetitle .title-text h2 {
+  color: #fff;
+}
+
+.pagetitle .title-text h2::after, .pagetitle .title-text h2::before {
+  background-color: #fff;
+}
+
 .pdf-list {
   padding: 0 1em;
 }
@@ -1545,6 +1577,92 @@ footer .copyright {
 
 .contact-mail .mail-img {
   max-width: 480px;
+}
+
+.dailywork .dailywork-left .dailywork-table {
+  border: 4px solid #00A440;
+  border-radius: 6px;
+  padding: 1em 0;
+  background-color: #FFFD98;
+}
+
+.dailywork .dailywork-left .dailywork-table table {
+  width: 100%;
+}
+
+.dailywork .dailywork-left .dailywork-table th, .dailywork .dailywork-left .dailywork-table td {
+  padding: 1em .5em;
+  text-align: center;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+
+.dailywork .dailywork-right .dailywork-right-child {
+  margin-top: 1.45em;
+  padding: 1em;
+  border: 4px solid #006E90;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+.dailywork .dailywork-right .dailywork-right-child dt, .dailywork .dailywork-right .dailywork-right-child dd {
+  padding: .5em;
+}
+
+.dailywork .dailywork-right .dailywork-right-child dt {
+  border-bottom: dotted 1px #006E90;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+.dailywork .dailywork-right .dailywork-right-child p {
+  border-bottom: dotted 1px #006E90;
+  padding: .5em .5em 1em .5em;
+  font-weight: bold;
+}
+
+.dailywork .dailywork-right .dailywork-right-child table {
+  width: 100%;
+}
+
+.dailywork .dailywork-right .dailywork-right-child table th {
+  width: 55%;
+}
+
+.dailywork .dailywork-right .dailywork-right-child table td {
+  text-align: left;
+}
+
+.dailywork .dailywork-right .dailywork-right-child table tr:last-child {
+  padding-bottom: .5em;
+}
+
+@media print, screen and (min-width: 768px) {
+  .dailywork {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .dailywork .dailywork-left {
+    -ms-flex-preferred-size: 60%;
+        flex-basis: 60%;
+    padding: 0 1em;
+  }
+  .dailywork .dailywork-left table {
+    width: 100%;
+  }
+  .dailywork .dailywork-right {
+    padding: 0 1em;
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+  }
+  .dailywork .dailywork-right .dailywork-right-child:first-child {
+    margin-top: 0;
+  }
 }
 
 @media (min-width: 480px) {
