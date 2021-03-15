@@ -803,6 +803,29 @@ h3, h4 {
   margin-bottom: 1em;
 }
 
+h3.double-underbar {
+  position: relative;
+  font-size: 25px;
+  font-size: 1.5625rem;
+  padding: .2em 0;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border-bottom: 5px solid #e1e1e2;
+  max-width: 580px;
+}
+
+h3.double-underbar::before {
+  position: absolute;
+  content: '';
+  bottom: -5px;
+  left: 0;
+  width: 20%;
+  min-width: 150px;
+  height: 4px;
+  background-color: #00A440;
+  z-index: 2;
+}
+
 h3.underbar-heading {
   margin-bottom: 1em;
   padding: 1em 0 1em 1.5em;
@@ -1030,6 +1053,17 @@ header {
   font-size: 16px;
 }
 
+header .header-top {
+  background-color: #00A440;
+  padding: .2em 0;
+}
+
+header .header-top h1 {
+  font-size: 12px;
+  margin: 0;
+  color: #fff;
+}
+
 header .container-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1046,23 +1080,26 @@ header .container-header {
 }
 
 header .container-header .logo-area {
-  padding-top: .5em;
+  padding-top: .25em;
 }
 
 header .container-header .logo-area-img {
-  max-width: 230px;
-  margin-bottom: .85em;
+  max-width: 275px;
+  margin-bottom: .5em;
+  margin-top: .5em;
 }
 
-header .container-header .logo-area h1 {
-  font-size: 12px;
-  margin: 0;
+@media (max-width: 767px) {
+  header .container-header .logo-area-img {
+    margin-top: 0em;
+    max-width: 175px;
+  }
 }
 
 header .container-header .font-size-area {
   background-color: #e1e1e2;
-  min-width: 225px;
-  padding: 1em 0em .5em 1.5em;
+  min-width: 200px;
+  padding: 1em 0em .5em 1.25em;
 }
 
 @media (max-width: 960px) {
@@ -1079,9 +1116,9 @@ header .container-header .font-size-title {
 
 header .container-header .font-size-button {
   background-color: #fff;
-  border-color: #00A440;
-  font-size: 16px;
-  width: 85px;
+  border-color: #006E90;
+  font-size: 14px;
+  width: 80px;
   border-radius: 6px;
   outline: none;
   padding-top: 5px;
@@ -1119,29 +1156,61 @@ header nav ul li a span {
         flex-basis: 55%;
     margin: 0 0 0 auto;
   }
-  header .nav-area .nav-area-access {
-    border: 2px solid #00A440;
-    width: 175px;
-    margin: .5em 5% 0 auto;
-    border-radius: 6px;
+  header .nav-area .nav-access-sitemap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    background-color: #00A440;
+    max-width: 300px;
+    margin: 0 0 0 auto;
+    border-radius: 0 0 0 12px;
+    margin-top: -1px;
   }
-  header .nav-area .nav-area-access a {
-    color: #595959;
+  header .nav-area .nav-access-sitemap .nav-area-access {
+    width: 150px;
+    border-radius: 6px;
+    height: 32px;
+  }
+  header .nav-area .nav-access-sitemap .nav-area-access a {
+    color: #fff;
     text-align: center;
     font-size: 14px;
-    padding: .25em 0;
+    padding: .2em 0 .8em 0;
   }
-  header .nav-area .nav-area-access a:hover {
-    color: #00A440;
+  header .nav-area .nav-access-sitemap .nav-area-access a:hover {
+    color: #FFFD98;
   }
-  header .nav-area .nav-area-access a span {
+  header .nav-area .nav-access-sitemap .nav-area-access a span {
     padding-left: .5em;
   }
-  header .nav-area .nav-area-access a::before {
+  header .nav-area .nav-access-sitemap .nav-area-access a::before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     position: relative;
     content: '\f3c5';
+    margin-right: 5px;
+  }
+  header .nav-area .nav-access-sitemap .nav-area-sitemap {
+    width: 140px;
+    height: 32px;
+  }
+  header .nav-area .nav-access-sitemap .nav-area-sitemap a {
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    padding: .2em 0 .8em 0;
+  }
+  header .nav-area .nav-access-sitemap .nav-area-sitemap a:hover {
+    color: #FFFD98;
+  }
+  header .nav-area .nav-access-sitemap .nav-area-sitemap a::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: relative;
+    content: '\f0e8';
     margin-right: 5px;
   }
   header .nav-area nav {
@@ -1156,7 +1225,7 @@ header nav ul li a span {
   header .nav-area nav ul li {
     width: 20%;
     text-align: center;
-    padding-top: .25em;
+    padding-top: .5em;
     padding-bottom: .5em;
   }
   header .nav-area nav ul li a {
@@ -1216,6 +1285,9 @@ header nav ul li a span {
     /*--navOpen--*/
   }
   header .nav-area .nav-area-access {
+    display: none;
+  }
+  header .nav-area .nav-area-sitemap {
     display: none;
   }
   header .nav-area nav {
@@ -1663,6 +1735,73 @@ footer .copyright {
   .dailywork .dailywork-right .dailywork-right-child:first-child {
     margin-top: 0;
   }
+}
+
+.flow-text {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: bold;
+  padding: 1em;
+  margin: 1.5em auto;
+  border: 2px solid #006E90;
+}
+
+.flow-text p {
+  margin: 0;
+}
+
+.flow-text .fa-sticky-note {
+  margin-right: .5em;
+  color: #006E90;
+}
+
+.flow-text .fa-arrow-circle-right {
+  margin: 0 .5em;
+  color: #006E90;
+}
+
+.flow-box {
+  margin-top: 2em;
+  padding: 2em .5em;
+  border: 4px solid #e1e1e2;
+  text-align: center;
+}
+
+.flow-box > p {
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+.flow-box > p:not(:last-of-type) {
+  margin-bottom: 3.5em;
+  position: relative;
+}
+
+.flow-box > p:not(:last-of-type)::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: relative;
+  content: '\f358';
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 30px;
+  color: #00A440;
+}
+
+.flow-box .flow-remarks {
+  border: 4px solid #FFFD98;
+  padding: 1em .5em;
+  max-width: 580px;
+  margin: 2em auto 0 auto;
+}
+
+.flow-box .flow-remarks p {
+  margin: 0;
+  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 @media (min-width: 480px) {
