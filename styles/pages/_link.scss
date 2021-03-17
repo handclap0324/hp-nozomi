@@ -1,0 +1,35 @@
+// <ul class="links">
+// <li><a href="https://www.hwc.or.jp" target="_blank">兵庫県社会福祉事業団</a></li>
+// <li><a href="https://www.hwc.or.jp/rihacenter" target="_blank">総合リハビリテーションセンター</a></li>
+// <li><a href="https://www.hwc.or.jp/hospital/" target="_blank">リハビリテーション中央病院</a></li>
+// <li><a href="https://www.hwc.or.jp/jiritsu/" target="_blank">自立生活訓練センター</a></li>
+// <li><a href="https://www.hwc.or.jp/ozora/" target="_blank">おおぞらのいえ</a></li>
+// <li><a href="https://www.hwc.or.jp/kouryukan/" target="_blank">障害者スポーツ交流館</a></li>
+// <li><a href="https://www.hwc.or.jp/akebono/" target="_blank">あけぼのの家</a></li>
+// <li><a href="https://www.hwc.or.jp/noukai/" target="_blank">職業能力開発施設</a></li>
+// <li><a href="https://www.manjyunoie.com/" target="_blank">万寿の家</a></li>
+// <li><a href="https://www.hwc.or.jp/kensyuu/" target="_blank">家庭介護・リハビリ研修センター</a></li>
+// <li><a href="https://www.assistech.hwc.or.jp/" target="_blank">福祉のまちづくり研究所</a></li>
+// </ul>
+
+.links {
+
+    li {
+        border: 1px solid $colorBg;
+        a {
+            color: $colorFont;
+            padding: 1.5em;
+
+            &::before {
+                @include fontawesome();
+                content: '\f0c1';
+                margin-right: 10px;
+                color: $colorMain;
+            }
+
+            &:hover {
+                background-color: #f0fbf5;
+            }
+        }
+    }
+}

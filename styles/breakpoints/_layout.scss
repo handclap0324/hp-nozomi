@@ -31,7 +31,7 @@
 
 aside {
     background-color: $colorBg;
-    margin-top: 6em;
+    margin-top: 4em;
 
     ul {
 
@@ -123,12 +123,27 @@ aside {
     // border: 1px solid red;
     padding: 0 1em;
 
+    li {
+        margin-bottom: 1.5em;
+    }
+
     a{
         margin: 0 auto 1em auto;
         padding: .5em 0;
         max-width: 960px;
-        border: 1px solid $colorFont;
-        border-radius: 2px;
+        border: 2px solid $colorFont;
+        border-radius: 4px;
+        color: $colorFont;
+
+        @media (max-width: 400px) {
+            font-size: 14px;
+        }
+
+        &:hover {
+            background-color: #f0fbf5;
+            border-color: $colorMain;
+            color: $colorMain;
+        }
         
         dl {
             display: flex;

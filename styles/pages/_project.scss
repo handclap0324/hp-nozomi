@@ -3,8 +3,9 @@
 
     margin-top: 2em;
 
-    .phto-space-double{
-        width: 100%;
+    .photo-space-double{
+        max-width: 920px;
+        margin: 0 auto;
 
         p {
             text-align: center;
@@ -13,9 +14,7 @@
             @include fontSize(14);
         }
 
-        .phto {
-            flex-basis: 50%;
-            // flex-shrink: 0;
+        .photo {
             max-width: 425px;
             margin: 0 auto;
             padding: .5em 1em;
@@ -29,7 +28,11 @@
 
         @media print, screen and (min-width: $breakpoint-tb-up) {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
+
+            .photo {
+                margin: 0 auto 0 0;
+            }
         }
 
     }
