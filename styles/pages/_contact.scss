@@ -1,13 +1,66 @@
 
-.contact-tel {
+.contact-telfax {
 
     p {
         font-size: 25px;
+        font-weight: bold;
+        // text-align: center;
+        margin-bottom: 1em;
+        padding-left: .5em;
+
+        @media only screen and (max-width: 359px) {
+            font-size: 21px;
+        }
+
+        small {
+            position: relative;
+            top: -2px;
+        }
     }
 }
 
 .contact-mail {
     .mail-img {
-        max-width: 480px;
+        max-width: 350px;
+        margin: 0;
     }
 }
+
+.icon {
+    max-width: 40px;
+    margin: 0 auto .3em 1em;
+    overflow: hidden;
+    border-radius: 4px;
+
+}
+
+.contact-mailarea + p {
+    small {
+        padding-left: 1.5em;
+    }
+}
+
+@media print, screen and (min-width: $breakpoint-tb-up) {
+    .contact-box > div {
+        display: flex;
+        margin: 2em 0 0 0;
+
+        p{
+            padding-left: .75em;
+            margin-bottom:0;
+        }
+
+        .icon {
+            margin: 0 0 0 .75em;
+        }
+    }
+
+    .contact-mailarea + p {
+        margin-top: .5em;
+
+        small {
+            padding-left: 5em;
+        }
+    }
+}
+

@@ -3,10 +3,6 @@
     max-width: 1280px;
     margin: 0 auto;
 
-    @media screen and (max-width: $breakpoint-pc) {
-        padding: 0 1em;
-    }
-
     &-main {
         padding: 0;
         margin-top: 4em;
@@ -15,29 +11,35 @@
             text-align: center;
             margin-bottom: 2em;
         }
-
-        @media screen and (max-width: $breakpoint-pc) {
-            padding: 0em 1em;
-        }
     }
 
+    @media screen and (max-width: $breakpoint-pc) {
+        padding: 0 1em;
+
+        &-main {
+            margin-top: 2.5em;
+        }
+    }
 
     &-no-padding {
         padding: 0;
     }
+
 }
-
-
 
 aside {
     background-color: $colorBg;
     margin-top: 4em;
 
+    @media (max-width: $breakpoint_tb) {
+        margin-top: 2em;
+    }
+
     ul {
 
         padding: 2em 0;
 
-        @media screen and (min-width: $breakpoint-tb-up) {
+        @media print, screen and (min-width: $breakpoint-tb-up) {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
@@ -70,8 +72,12 @@ aside {
 }
 
 .contents-box {
-    margin: 0 auto 3em auto;
+    margin: 0 auto 4em auto;
     max-width: 980px;
+
+    @media only screen and (max-width: $breakpoint-pc) {
+        margin: 0 auto 3em auto;
+    }
 }
 
 ///////////////////////////////////////////////////////////
@@ -84,6 +90,10 @@ aside {
     background-position: center 23%;
     background-size: cover;
     background-repeat: no-repeat;
+
+    &.pagetitle-sub {
+        background-image: url('../img/title_bg_02.jpg');
+    }
     
 
     .container {
@@ -92,9 +102,9 @@ aside {
         height: 250px;
         position: relative;
 
-
-
-
+        @media only screen and (max-width: $breakpoint-sp) {
+            height: 150px;
+        }
     }
 
     .title-text {
@@ -102,16 +112,26 @@ aside {
         position: absolute;
         top:50%;
         left: 50%;
-        width: 250px;
+        width: 27%;
+        min-width: 300px;
         transform: translate(-50%, -50%);
         z-index: 5;
+        // background-color: rgba(255, 255, 255, 0.25);
+        background-color: rgba(0, 0, 0, 0.35);
+        padding: 2.5em 15px;
+        box-shadow: 0 0 4px -1px black;
 
         h2 {
             color: $colorWhite;
-            
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 20px;
+            line-height: 1.25;
     
             &::after, &::before {
+                height: 1px;
                 background-color: $colorWhite;
+                background-color: rgba(255, 255, 255, 0.9);
+
             }
         }
     }
@@ -141,8 +161,9 @@ aside {
 
         &:hover {
             background-color: #f0fbf5;
-            border-color: $colorMain;
-            color: $colorMain;
+            border-color: $colorSub3;
+            color: $colorSub3;
+            font-weight: bold;
         }
         
         dl {

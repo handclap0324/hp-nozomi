@@ -3,13 +3,14 @@
 
     @include fontSize(18);
     font-weight: bold;
-    padding: 1em;
+    padding: 1.5em;
     margin: 1.5em auto;
 
-    border: 2px solid $colorSub3;
+    border: 4px solid $colorSub3;
+    background-color: $colorSub;
 
 
-    p {margin: 0;}
+    p {margin: 0; line-height: 2.25;}
 
 
     .fa-sticky-note {

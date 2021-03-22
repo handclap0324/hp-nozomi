@@ -15,7 +15,7 @@ header {
         display: flex;
         justify-content: space-between;
 
-        @media print, screen and (max-width: $breakpoint-pc) {
+        @media only screen and (max-width: $breakpoint-pc) {
             padding-left: 1em;
         }
 
@@ -28,7 +28,12 @@ header {
                 margin-bottom: .5em;
                 margin-top: .5em;
 
-                @media (max-width: $breakpoint-tb) {
+                @media (max-width: 960px) {
+                    margin-top: 1em;
+                    max-width: 235px;
+                }
+
+                @media only screen and (max-width: $breakpoint-tb) {
                     margin-top: 0em;
                     max-width: 175px;
                 }
@@ -41,7 +46,7 @@ header {
             min-width: 175px;
             padding: 1em 0em .5em 0.8em;
 
-            @media (max-width: 960px) {
+            @media only screen and (max-width: 960px) {
                 display: none;
             }
         }
@@ -228,6 +233,7 @@ header {
 
                             span {
                                 color: lighten($colorFont, 40%);
+                                letter-spacing: 0.03em;
                             }
                         }
                     }
@@ -241,7 +247,13 @@ header {
         }
     }
 
-    @media (max-width: $breakpoint-tb) {
+    @media only screen and  (max-width: 960px) {
+        .nav-area {
+            flex-basis: 65%;
+        }
+    }
+
+    @media only screen and (max-width: $breakpoint-tb) {
         .nav-area {
             
             .nav-area-access {
@@ -290,8 +302,8 @@ header {
 
         #js-toggle {
             position: fixed;
-            top: 25px;
-            right: 15px;
+            top: 17px;
+            right: 17px;
             width: 44px;
             height: 46px;
             background-color: #fff;
