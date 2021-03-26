@@ -31,7 +31,6 @@
         .photo {
             flex-basis: 50%;
             max-width: 425px;
-            // width: 300px;
             margin: 0 auto;
             padding: .5em 3%;
 
@@ -57,6 +56,19 @@
         text-align: center;
         font-weight: bold;
     }
+
+
+}
+
+.kana {
+    background-color: rgba($colorSub3, 0.25);
+    background-color: #DC8500;
+    padding: .2em .6em;
+    margin-right: .4em;
+    border-radius: 50%;
+    color: $colorWhite;
+    font-weight: normal;
+
 }
 
 .pd0 {

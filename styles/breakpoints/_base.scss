@@ -26,36 +26,6 @@ img {
 //   h2  見出し   //////////////
 ////////////////////////////////
 
-h2{
-  @include fontSize(25);
-  position: relative;
-  max-width: 275px;
-  margin: 0 auto;
-  text-align: center;
-
-  &::before {
-    position :absolute;
-    content: '';
-    top: 50%;
-    left: 7%;
-    width: 40px;
-    height: 2px;
-    background-color: $colorFont;
-    transform: translateY(-50%);
-  }
-
-  &::after {
-    position :absolute;
-    content: '';
-    top: 50%;
-    right: 7%;
-    width: 40px;
-    height: 2px;
-    background-color: $colorFont;
-    transform: translateY(-50%);
-  }
-}
-
 h3,h4 {
   @include fontSize(20);
   margin-bottom: 1em;
@@ -67,42 +37,52 @@ h3,h4 {
 ////////////////////////////////
 
 //topページ
-h3.number-heading01 {
-  position: relative;
-  overflow: hidden;
-  padding: .75em 0 .75em 88px;
-  border-top: 4px solid $colorMain;
-  margin-bottom: 1.5em;
 
-    &:before {
-      position: absolute;
-      top: -150%;
-      left: -100px;
-      width: 183px;
-      height: 236%;
-      content: '';
-      transform: rotate(30deg);
-      background: $colorMain;
-    }
 
-    span {
-      @include fontSize(25);
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      display: block;
-      padding-top: 8px;
-      padding-left: 18px;
-      color: #fff;
-    }
-}
+// h2.number-heading01 {
+//   @include fontSize(20);
+//   position: relative;
+//   overflow: hidden;
+//   padding: .75em 0 .75em 88px;
+//   border-top: 4px solid $colorMain;
+//   margin-bottom: 1.5em;
+//   max-width: 100%;
+//   text-align: left !important;
+
+//     &:before {
+//       position: absolute;
+//       top: -150%;
+//       left: -100px;
+//       width: 183px;
+//       height: 236%;
+//       content: '';
+//       transform: rotate(30deg);
+//       background: $colorMain;
+//     }
+
+//     &::after {
+//       display: none;
+//     }
+
+//     span {
+//       @include fontSize(20);
+//       position: absolute;
+//       z-index: 1;
+//       top: 0;
+//       left: 0;
+//       display: block;
+//       padding-top: 8px;
+//       padding-left: 18px;
+//       color: #fff;
+//     }
+// }
 
 //top 新着
 h3.square-heading {
   margin-bottom : 1.5em;
   padding: .75em 0 .75em 1.5em;
   border: 3px solid $colorMain;
+  background-color: $colorWhite;
   position: relative;
   @include fontSize(18);
  
@@ -186,7 +166,7 @@ h3.number-heading02 {
 
 }
 
-//リンク
+//リンク・面会について
 h3.speechballoon {
   position: relative;
   padding: 1em 1.2em;
@@ -195,6 +175,15 @@ h3.speechballoon {
   border-bottom: 4px solid $colorMain;
   background: rgba($colorMain, 0.05);
   margin-bottom: 2em;
+
+  &.color-black {
+    color: $colorFont;
+    border-bottom: 4px solid $colorSub3;
+
+    &::before {
+      border-color:$colorSub3 transparent transparent transparent;
+    }
+  }
 }
 
 h3.speechballoon:before {
@@ -220,36 +209,6 @@ h3.speechballoon:after {
   border-style: solid;
   border-color: #EDF9F2 transparent transparent transparent;
 }
-
-// h3.number-heading02 {
-//   position: relative;
-//   border: 3px solid $colorMain;
-//   padding-left: 4em;
-//   padding-top: .3em;
-//   margin-bottom: 1.5em;
-  
-// }
-
-// h3.number-heading02 span {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   padding: .35em .75em;
-//   color: $colorWhite;
-//   background: $colorMain;
-// }
-
-// h3.number-heading02 span:after {
-//   position: absolute;
-//   top: calc(50% - 10px);
-//   right: -13px;
-//   width: 0;
-//   height: 0;
-//   content: '';
-//   border-width: 10px 0 10px 14px;
-//   border-style: solid;
-//   border-color: transparent transparent transparent $colorMain;
-// }
 
 
 // h3.border-heading {
@@ -309,6 +268,30 @@ h3.double-underbar {
 // アクセスマップ
 
 h4 {
+  @include fontSize(18);
+}
+
+h4.stripes-heading {
+
+  position: relative;
+  max-width: 210px;
+  margin: 0 auto 3em auto;
+
+  &::after {
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    content: '';
+    background-image: repeating-linear-gradient(-45deg, $colorSub3, $colorSub3 1px, transparent 2px, transparent 5px);
+    background-size: 7px 7px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+h5 {
   @include fontSize(16);
 }
 
@@ -343,12 +326,45 @@ li {
   margin-top: 2em;
 }
 
+.mb1em {
+  margin-bottom: 1em;
+}
+
+.mb2em {
+  margin-bottom: 2em;
+}
+
 .pb1em {
   padding-bottom: 1em;
 }
 
 .pb2-5em {
   padding-bottom: 2.5em !important;
+}
+
+.fcsub3 {
+  color: $colorSub3;
+}
+
+//字下げを考慮したインデント（bofoe要素）
+.indent {
+  display    : flex;
+  align-items: baseline;
+}
+
+//marker
+.marker {
+  padding: .25em .5em;
+  background-image: linear-gradient(left, transparent 50%, $colorSub 50%);
+  background-repeat: repeat-x;
+  background-size: 200% .8em;
+  background-position: 0 1em;
+  transition: background 1.5s linear;
+  
+
+  &.inview {
+      background-position: -100% 1em;
+  }
 }
 
 

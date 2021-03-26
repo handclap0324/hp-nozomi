@@ -29,15 +29,29 @@
 
 aside {
     background-color: $colorBg;
+    background: url('../img/aside_bg.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
     margin-top: 4em;
+    padding: 3em 0;
 
     @media (max-width: $breakpoint_tb) {
         margin-top: 2em;
+        background: url('../img/aside_bg_sp.jpg') no-repeat;
+        background-position: bottom center;
+    }
+
+    & > div {
+        // border: 2px solid rgba($colorWhite, .6);
+        background-color:rgba(0, 0, 0, 0.2);
+        border-radius: 3px; 
     }
 
     ul {
 
         padding: 2em 0;
+        max-width: 1200px;
+        margin: 0 auto;
 
         @media print, screen and (min-width: $breakpoint-tb-up) {
             display: flex;
@@ -47,23 +61,67 @@ aside {
             li {
                 flex-basis: 50%;
                 flex-shrink: 0;
-                max-width: 530px;
+                max-width: 560px;
             }
-
         }
 
         li {
 
             padding: 1em;
 
+
+
             a{
-                border: 1px solid $colorMain;
+                border: 4px solid $colorMain;
                 text-align: center;
-                padding: 2.5em;
-                background-color: $colorWhite;
-                max-width: 500px;
+                padding: 2em;
+                background-color: rgba($colorWhite, .95);
+                width: 100%;
                 margin: 0 auto;
-    
+                color: $colorMain;
+                font-weight: bold;
+                font-size: 18px;
+                position: relative;
+                border-radius: 6px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: calc(50% - 5px);
+                    right: 3.5%;
+                    width:0;
+                    border-right: 8px solid transparent;
+                    border-bottom: 8px solid $colorSub3;
+                    opacity: 0;
+                    transition: all .1s .2s linear;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: 4%;
+                    width: 45px;
+                    height: 3px;
+                    background-color: $colorSub3;
+                    opacity: 0;
+                    transition: all .1s .2s linear;
+                }
+
+                &:hover {
+                    background-color: rgba($colorWhite, 1.0);
+                    color: $colorSub3;
+                    border-color: $colorSub3;
+
+                    &::after {
+                        opacity: 1;
+                        transform: translateX(30%);
+                    }
+                    &::before {
+                        opacity: 1;
+                        transform: translateX(200%);
+                    }
+                }
             }
 
         } 
@@ -84,8 +142,38 @@ aside {
 //////    ページタイトル   ////////////////////////////////
 ///////////////////////////////////////////////////////////
 
+.pagetitle h2{
+    @include fontSize(25);
+    position: relative;
+    max-width: 275px;
+    margin: 0 auto;
+    text-align: center;
+  
+    &::before {
+      position :absolute;
+      content: '';
+      top: 50%;
+      left: 7%;
+      width: 40px;
+      height: 2px;
+      background-color: $colorFont;
+      transform: translateY(-50%);
+    }
+  
+    &::after {
+      position :absolute;
+      content: '';
+      top: 50%;
+      right: 7%;
+      width: 40px;
+      height: 2px;
+      background-color: $colorFont;
+      transform: translateY(-50%);
+    }
+  }
+
 .pagetitle {
-    background-color: $colorMain;
+    background-color: $colorWhite;
     background-image: url('../img/title_bg.jpg');
     background-position: center 23%;
     background-size: cover;
@@ -93,7 +181,39 @@ aside {
 
     &.pagetitle-sub {
         background-image: url('../img/title_bg_02.jpg');
+        background-position: center;
     }
+    
+    &.pagetitle-project{
+        background-image: url('../img/title_bg_project.jpg');
+        background-position: center 75%;
+    }
+    &.pagetitle-facility {
+        background-image: url('../img/title_bg_facility.jpg');
+        background-position: center 75%;
+    }
+    &.pagetitle-dailylife {
+        background-image: url('../img/title_bg_dailylife.jpg');
+        background-position: center 75%;
+    }
+    &.pagetitle-use {
+        background-image: url('../img/title_bg_use.jpg');
+        background-position: center 75%;
+    }
+
+    &.pagetitle-link {
+        background-image: url('../img/title_bg_link.jpg');
+        background-position: center 87%;
+    }
+    &.pagetitle-contact {
+        background-image: url('../img/title_bg_contact.jpg');
+        background-position: center;
+    }
+    &.pagetitle-sitemap {
+        background-image: url('../img/title_bg_sitemap.jpg');
+        background-position: center 75%;
+    }
+
     
 
     .container {
@@ -116,10 +236,9 @@ aside {
         min-width: 300px;
         transform: translate(-50%, -50%);
         z-index: 5;
-        // background-color: rgba(255, 255, 255, 0.25);
         background-color: rgba(0, 0, 0, 0.35);
         padding: 2.5em 15px;
-        box-shadow: 0 0 4px -1px black;
+        // box-shadow: 0 0 4px -1px black;
 
         h2 {
             color: $colorWhite;

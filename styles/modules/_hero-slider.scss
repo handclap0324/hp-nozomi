@@ -1,6 +1,10 @@
 
 .hero {
-  margin-bottom: 4em;
+  background-color: $colorMain;
+
+  // @media only screen and (max-width: $breakpoint-tb) {
+  //   margin-bottom: 2em;
+  // }
 }
 
 
