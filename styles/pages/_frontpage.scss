@@ -125,7 +125,7 @@ h2.top-h2-heading {
                     width: 0%;
                     height: 100%;
                     background-color: #f0fbf5;
-                    background-color: rgba($colorSub3, .25);
+                    background-color: rgba($colorSub3, .15);
                     z-index: -1;
                     transition: width .25s .2s ease-in-out;
                 }
@@ -232,7 +232,7 @@ h2.top-h2-heading {
 //パンフレットダウンロード
 .pdf-list.pamphlet-pdf {
     // border: 1px solid red;
-    padding: 0em 1em 2em 1em;
+    padding: 0em 1em 2.5em 1em;
     margin-top: -1em;
 
     a{
@@ -247,8 +247,8 @@ h2.top-h2-heading {
         
         border: 2px solid $colorWhite;
         
-        background: url('.././img/pdf_icon.png') no-repeat right 7% center;
-        background-size: 23px 26px;
+        background: url('.././img/pdf_icon.png') no-repeat right 8.5% center;
+        background-size: 18px 20px;
         background-color: $colorSub3;
         transition: all .2s linear;
 

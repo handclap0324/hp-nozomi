@@ -1069,7 +1069,7 @@ aside {
   background-position: center;
   background-size: cover;
   margin-top: 4em;
-  padding: 3em 0;
+  padding: 4em 0;
 }
 
 @media (max-width: 767px) {
@@ -1077,6 +1077,7 @@ aside {
     margin-top: 2em;
     background: url("../img/aside_bg_sp.jpg") no-repeat;
     background-position: bottom center;
+    padding: 0.5em 0em;
   }
 }
 
@@ -1118,7 +1119,7 @@ aside ul li a {
   border: 4px solid #00A440;
   text-align: center;
   padding: 2em;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.97);
   width: 100%;
   margin: 0 auto;
   color: #00A440;
@@ -1132,26 +1133,26 @@ aside ul li a::before {
   content: '';
   position: absolute;
   top: calc(50% - 5px);
-  right: 3.5%;
+  right: 12%;
   width: 0;
   border-right: 8px solid transparent;
   border-bottom: 8px solid #006E90;
   opacity: 0;
-  -webkit-transition: all .1s .2s linear;
-  transition: all .1s .2s linear;
+  -webkit-transition: all .15s .2s ease-in-out;
+  transition: all .15s .2s ease-in-out;
 }
 
 aside ul li a::after {
   content: '';
   position: absolute;
   top: 50%;
-  right: 4%;
+  right: 13%;
   width: 45px;
   height: 3px;
   background-color: #006E90;
   opacity: 0;
-  -webkit-transition: all .1s .2s linear;
-  transition: all .1s .2s linear;
+  -webkit-transition: all .15s .2s ease-in-out;
+  transition: all .15s .2s ease-in-out;
 }
 
 aside ul li a:hover {
@@ -1162,14 +1163,14 @@ aside ul li a:hover {
 
 aside ul li a:hover::after {
   opacity: 1;
-  -webkit-transform: translateX(30%);
-          transform: translateX(30%);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
 aside ul li a:hover::before {
   opacity: 1;
-  -webkit-transform: translateX(200%);
-          transform: translateX(200%);
+  -webkit-transform: translateX(570%);
+          transform: translateX(570%);
 }
 
 .contents-box {
@@ -1181,39 +1182,6 @@ aside ul li a:hover::before {
   .contents-box {
     margin: 0 auto 3em auto;
   }
-}
-
-.pagetitle h2 {
-  font-size: 25px;
-  font-size: 1.5625rem;
-  position: relative;
-  max-width: 275px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.pagetitle h2::before {
-  position: absolute;
-  content: '';
-  top: 50%;
-  left: 7%;
-  width: 40px;
-  height: 2px;
-  background-color: #191919;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
-.pagetitle h2::after {
-  position: absolute;
-  content: '';
-  top: 50%;
-  right: 7%;
-  width: 40px;
-  height: 2px;
-  background-color: #191919;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 
 .pagetitle {
@@ -1280,26 +1248,93 @@ aside ul li a:hover::before {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 27%;
-  min-width: 300px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  z-index: 5;
-  background-color: rgba(0, 0, 0, 0.35);
-  padding: 2.5em 15px;
 }
 
 .pagetitle .title-text h2 {
-  color: #fff;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 20px;
-  line-height: 1.25;
+  font-size: 25px;
+  font-size: 1.5625rem;
+  letter-spacing: 0.1em;
+  max-width: 275px;
+  margin: 0 auto;
+  text-align: center;
+  color: #191919;
+  line-height: 1.35;
+  position: relative;
+  opacity: 0;
+  -webkit-animation: titleText .2s 1.0s linear forwards;
+          animation: titleText .2s 1.0s linear forwards;
 }
 
-.pagetitle .title-text h2::after, .pagetitle .title-text h2::before {
-  height: 1px;
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, 0.9);
+@media only screen and (max-width: 767px) {
+  .pagetitle .title-text h2 {
+    font-size: 20px;
+  }
+}
+
+.pagetitle .title-text-inner {
+  width: 300px;
+  z-index: 5;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-color: rgba(255, 255, 255, 0.75);
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-animation: titleAnime .4s 0.7s ease-in-out forwards;
+          animation: titleAnime .4s 0.7s ease-in-out forwards;
+  position: relative;
+}
+
+@media only screen and (max-width: 640px) {
+  .pagetitle .title-text-inner {
+    padding-top: 1.75em;
+    padding-bottom: 1.75em;
+    width: 275px;
+  }
+}
+
+.pagetitle .title-text-inner::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  width: 100px;
+  height: 6px;
+  background-color: #191919;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+  -webkit-animation: titleText .2s 1.0s linear forwards;
+          animation: titleText .2s 1.0s linear forwards;
+}
+
+@-webkit-keyframes titleAnime {
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@keyframes titleAnime {
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+@-webkit-keyframes titleText {
+  100% {
+    opacity: 1.0;
+  }
+}
+
+@keyframes titleText {
+  100% {
+    opacity: 1.0;
+  }
 }
 
 .pdf-list {
@@ -2026,7 +2061,7 @@ h2.top-h2-heading.last {
   width: 0%;
   height: 100%;
   background-color: #f0fbf5;
-  background-color: rgba(0, 110, 144, 0.25);
+  background-color: rgba(0, 110, 144, 0.15);
   z-index: -1;
   -webkit-transition: width .25s .2s ease-in-out;
   transition: width .25s .2s ease-in-out;
@@ -2111,7 +2146,7 @@ h2.top-h2-heading.last {
 }
 
 .pdf-list.pamphlet-pdf {
-  padding: 0em 1em 2em 1em;
+  padding: 0em 1em 2.5em 1em;
   margin-top: -1em;
 }
 
@@ -2126,8 +2161,8 @@ h2.top-h2-heading.last {
   color: #fff;
   opacity: 0.9;
   border: 2px solid #fff;
-  background: url(".././img/pdf_icon.png") no-repeat right 7% center;
-  background-size: 23px 26px;
+  background: url(".././img/pdf_icon.png") no-repeat right 8.5% center;
+  background-size: 18px 20px;
   background-color: #006E90;
   -webkit-transition: all .2s linear;
   transition: all .2s linear;
