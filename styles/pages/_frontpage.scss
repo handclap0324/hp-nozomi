@@ -98,7 +98,7 @@ h2.top-h2-heading {
                 white-space: nowrap;
                 padding: .5em .5em;
                 position: relative;
-                transition: background-color .2s .2s linear;
+                transition: background-color .2s .3s linear;
                 z-index: 0;
 
                 &::before {
@@ -127,7 +127,7 @@ h2.top-h2-heading {
                     background-color: #f0fbf5;
                     background-color: rgba($colorSub3, .15);
                     z-index: -1;
-                    transition: width .25s .2s ease-in-out;
+                    transition: width .25s .3s ease-in-out;
                 }
 
                 a {
@@ -135,11 +135,6 @@ h2.top-h2-heading {
                     padding: 1em 0;
                     transition: all 0s;
                     z-index: 0;
-
-                    // &:hover {
-                    //     color: $colorSub3;
-                    //     text-decoration: underline;
-                    // }
                 }
             }
 
@@ -173,11 +168,11 @@ h2.top-h2-heading {
                 }
 
                 th {
-                    padding: 1em 0 0 .5em;
+                    padding: 1em 0 0 1em;
                 }
     
                 td a {
-                    padding: .5em 0 1em 0;
+                    padding: .5em 0 1em .5em;
                 }
             }
         }

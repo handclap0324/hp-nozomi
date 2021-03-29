@@ -206,7 +206,7 @@ aside {
             line-height: 1.35;
             position: relative;
             opacity: 0;
-            animation: titleText .2s 1.0s linear forwards;
+            animation: titleText .1s 1.5s linear forwards;
             @media only screen and (max-width: $breakpoint_tb) {
                 font-size: 20px;
             }
@@ -222,7 +222,7 @@ aside {
             background-color: rgba($colorWhite, 0.75);
             transform-origin: center left;
             transform: scaleX(0);
-            animation: titleAnime .4s 0.7s ease-in-out forwards;
+            // animation: titleAnime .4s 0.7s ease-in-out forwards;
             position: relative;
 
             @media only screen and (max-width: $breakpoint-sp) {
@@ -241,7 +241,15 @@ aside {
                 background-color: $colorFont;
                 transform: translateX(-50%);
                 opacity: 0;
-                animation: titleText .2s 1.0s linear forwards;
+                // animation: titleText .2s 1.0s linear forwards;
+            }
+
+            &.start-animation {
+                animation: titleAnime .4s 0.7s ease-in-out forwards;
+
+                &::before {
+                    animation: titleText .2s 1.0s linear forwards;
+                }
             }
         }
     }
@@ -307,6 +315,84 @@ aside {
                     background-size: 30px 35px;
                 }
             }
+        }
+    }
+}
+
+/////////////////////////////////////////////
+//  to-top   ///////////////////////////////
+////////////////////////////////////////////
+
+.to-top {
+
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    opacity: 0;
+    display: none;
+    z-index: 10;
+
+    a {
+        width: 50px;
+        height: 50px;
+        background-color: $colorMain;
+        border-radius: 4px;
+        padding: 4px;
+        opacity: 0.9;
+
+        &:hover {
+            background-color: #006D2A;
+        }
+    }
+    
+
+    &-inner {
+        border: 1px solid $colorWhite;
+        width: 42px;
+        height: 42px;
+    }
+
+
+
+    .fas {
+        font-size: 25px;
+        color: $colorWhite;
+        padding-left: 9px;
+        padding-top: 6px;
+    }
+
+    @media only screen and (max-width: $breakpoint-tb) {
+        bottom: 10px;
+        right: 10px;
+
+        
+        a {
+            width: 42px;
+            height: 42px;
+            padding: 4px;
+        }
+
+        &-inner {
+            border: 1px solid $colorWhite;
+            width: 34px;
+            height: 34px;
+        }
+
+        .fas {
+            padding-left: 5px;
+            padding-top: 3px;
+        }
+    }
+
+
+    &.display-on {
+        animation: opacity .3s linear forwards;
+        display: block;
+    }
+
+    @keyframes opacity {
+        100% {
+            opacity: 1.0;
         }
     }
 }

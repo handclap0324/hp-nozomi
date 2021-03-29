@@ -76,6 +76,7 @@
             width: 100%;
             position: relative;
             background-size: cover;
+            border-radius: 10px;
     
             p {
                 margin: 0;
@@ -88,6 +89,10 @@
                 font-weight: bold;
                 padding: .5em;
                 line-height: 1.7;
+            }
+
+            img {
+                border-radius: 10px;
             }
         }
 

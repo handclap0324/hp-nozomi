@@ -11,20 +11,15 @@
     <meta name="google-site-verification" content="" />
     <meta name="msvalidate.01" content="" />
 
-    <!--meta name='robots' はリリース時削除！！-->
-    <meta name='robots' content='noindex,nofollow' />
-
     <link rel='dns-prefetch' href='//code.jquery.com' />
     <link rel='dns-prefetch' href='//use.fontawesome.com' />
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />
     <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-    <!--<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">-->
 
     <link rel='stylesheet' id='font-awesome-css'  href='https://use.fontawesome.com/releases/v5.6.1/css/all.css?ver=20200327' type='text/css' media='all' />
-    <link rel="stylesheet" href="styles/style.css?ver=20210326">
-    <script src='https://code.jquery.com/jquery-2.2.4.min.js?ver=20180212'></script>
+    <link rel="stylesheet" href="styles/style.css?ver=20210329">
     <!-- favicon -->
     <link rel="icon" href="img/favicon.ico" />
     <!-- ogp設定 -->
@@ -83,7 +78,29 @@
   </header>
 
   <div class="hero">
-    <div class="hero-image container container-no-padding"><img src="https://placehold.jp/1280x640.png" alt="ヒーローイメージ"></div>
+    <div class="hero-image">
+      <img class="ofi-img" src="img/hero01.jpg" alt="ヒーローイメージ">
+      <div class="hero-image-text">
+        <div class="hero-image-text-inner">
+          <p>夢と潤いのある<span class="dib">生活を目指して</span></p>
+        </div>
+      </div>
+      
+      <div class="hero-image-circle">
+        <div class="hero-image-circle-inner">
+          <div class="hero-image-circle-inner-child hero-image-circle-left">
+            <img src="img/hero01_03.png" alt="生活風景">
+          </div>
+          <div class="hero-image-circle-inner-child hero-image-circle-center">
+            <img src="img/hero01_02.png" alt="生活風景">
+          </div>
+          <div class="hero-image-circle-inner-child hero-image-circle-right">
+            <img src="img/hero01_01.png" alt="生活風景">
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
   
   <main>
@@ -98,11 +115,6 @@
               私たちのミッション(社会的使命)を実現していくことに繋がっています。</strong></p>
           </div>
         </div>
-        <!-- <div class="contents-box">
-          <h3 class="number-heading01"><span>01</span>施設の目的</h3>
-          <p><strong>救護施設「のぞみの家」は、生活保護法に基づき、心身や精神に障害があり、経済的な問題を含めて日常生活を送ることが困難な人達を対象とし、
-            福祉の向上と社会自立の促進を援助する保護施設です。</strong></p>
-        </div> -->
         <div class="contents-box">
           <h2 class="top-h2-heading last"><span class="number">02</span>実践的目標</h2>
           <div class="contents-box-textbox">
@@ -126,6 +138,10 @@
           <div class="table table-news">
             <table>
               <tr>
+                <th>2021年4月1日</th>
+                <td><a href="index.html">ホームページをリニューアルしました。</a></td>
+              </tr>
+              <tr>
                 <th>2021年2月2日</th>
                 <td><a href="officialorgan.html">機関誌令和3年新年号「のぞみんごう」掲載しました。</a></td>
               </tr>
@@ -133,11 +149,6 @@
                 <th>2020年10月5日</th>
                 <td><a href="officialorgan.html">機関誌令和2年春号「のぞみんごう」掲載しました。</a></td>
               </tr>
-              <!-- <tr>
-                <th>2020年10月5日</th>
-                <td><a href="projectplan.html">令和2年度　救護施設のぞみの家　事業計画を掲載しました。</a></td>
-              </tr>
-              <tr> -->
                 <th>2020年2月26日</th>
                 <td><a href="officialorgan.html">機関誌令和2年新年号「のぞみんごう」掲載しました。</a></td>
               </tr>
@@ -155,15 +166,7 @@
                 <th>2019年1月21日</th>
                 <td><a href="officialorgan.html">機関誌平成30年春号「のぞみんごう」掲載しました。</a></td>
               </tr>
-              <!-- <tr>
-                <th>2018年4月10日</th>
-                <td><a href="projectplan.html">平成30年度　救護施設のぞみの家　事業計画骨子を掲載しました。</a></td>
-              </tr> -->
-              <!-- <tr>
-                <th>2018年4月10日</th>
-                <td><a href="html/nintei.html">認定就労訓練事業案内を掲載しました。</a></td>
-              </tr>
-              <tr> -->
+              <tr>
                 <th>2017年11月8日</th>
                 <td><a href="pdf/H29Seminar.pdf" target="_blank">「公開セミナー ～精神障害者への理解と地域生活支援について～」を開催します。 </a></td>
               </tr>
@@ -226,9 +229,18 @@
       </div>
     </div>
     <p class="copyright">
-      <small>&copy; <span id="thisyear-js">2021</span> 兵庫県社会福祉事業団 のぞみの家 <span class="dib">All Rights Reserved.</span></small>
+      <small>&copy; <span id="js-thisyear">2021</span> 兵庫県社会福祉事業団 のぞみの家 <span class="dib">All Rights Reserved.</span></small>
     </p>
   </footer>
+  <div id="js-toTop" class="to-top">
+    <a href="#">
+      <div class="to-top-inner">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+    </a>
+  </div>
   <script src="scripts/main.js"></script>
+  <!--Object-fit : Polyfill for IE-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.min.js"></script>
 </body>
 </html>

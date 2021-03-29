@@ -82,6 +82,15 @@ footer {
         color: $colorWhite;
         margin: 2em 0 0 0;
         padding: 1em 0 1em 0;
+
+        @media only screen and (max-width: $breakpoint_tb) {
+            text-align: left;
+            padding-left: 1em;
+
+            .dib {
+                display: block;
+            }
+        }
     }
 
     @media print, screen and (min-width: $breakpoint-tb-up) {
