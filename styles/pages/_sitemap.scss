@@ -1,0 +1,86 @@
+// <div class="container container-main">
+// <div class="contents-box">
+//   <ul class="sitemap-links">
+//     <li><a href="index.html">ホーム</a></li>
+//     <li><a href="facility.html">施設案内</a></li>
+//     <li><a href="project.html">事業案内</a></li>
+//     <li><a href="dailylife.html">生活案内</a></li>
+//     <li><a href="use.html">利用案内</a></li>
+//   </ul>
+//   <hr class="sitemap-links-hr">
+//   <ul class="sitemap-links sitemap-links-sub">
+//     <li><a href="projectplan.html">事業計画</a></li>
+//     <li><a href="officialorgan.html">のぞみんごう[機関紙]</a></li>
+//     <li><a href="contact.html">お問い合わせ</a></li>
+//     <li><a href="link.html">リンク</a></li>
+//     <li><a href="pdf/pamphlet.pdf" target="_blank">パンフレット</a></li>
+//   </ul>
+// </div>
+// </div>
+
+.sitemap-links {
+    background-color: lighten($colorBg, 7.5%);
+    padding: 3em 1.5em;
+    width: 100%;
+
+    li {
+
+        padding: 1em;
+
+        a {
+            border: 1px solid $colorMain;
+            border-left: 8px solid $colorMain;
+            background-color: $colorWhite;
+            padding: 0 0 0 1em;
+            width: 100%;
+            height: 70px;
+            line-height: 70px;
+            color: $colorFont;
+            @include fontSize(14);
+            position: relative;
+
+            
+
+            &::after {
+                @include fontawesome();
+                content: '\f30b';
+                position: absolute;
+                top: 0%;
+                right: 5%;
+                font-size: 20px;
+                color: $colorMain;
+                transition: transform .2s ease-in-out;
+            }
+            &:hover {
+                background-color: #f0fbf5;
+
+                &::after {
+                    transform: translateX(35%);
+                }
+            }
+
+        }
+    }
+
+    @media (max-width: $breakpoint_tb) {
+        padding: 1.5em 0;
+    }
+
+    
+    @media print, screen and (min-width: 500px) {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        li {
+            flex-basis: 50%;
+            max-width: 50%;
+            flex-shrink: 0;
+        }
+    }
+}
+
+hr.sitemap-links-hr {
+    background-color: $colorBg;
+    margin: 2em 0;
+}

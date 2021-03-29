@@ -1,0 +1,195 @@
+.dailywork {
+    margin: 2em auto;
+    padding: 2em 1em;
+    background-color: rgba($colorBg, 0.5);
+    background: url('../img/dailylife_bg02.jpg') no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    // &::before {
+    //     position:fixed;
+    //     display: block;
+    //     top:0;
+    //     left:0;
+    //     z-index:-1;
+    //     width:100vw;
+    //     height:100vh;
+    //     background:url("../img/dailylife_bg.jpg") no-repeat;
+    //     background-size:cover;
+    //     content:"";
+    // }
+
+    // background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23028034' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    .dailywork-left {
+        .dailywork-table {
+            border: 4px solid  $colorSub;
+            padding: 1em 0;
+            background-color: rgba($colorWhite, 0.95);
+            // border-radius: 6px;
+
+            table {
+                width: 100%;
+
+                th {
+                    position: relative;
+                }
+
+                th::after {
+                    position: absolute;
+                    content: '';
+                    top : calc(50% + 1px);
+                    right: -23%;
+                    width: 35px;
+                    height: 1px;
+                    background-color: $colorMain;
+                }
+            }
+
+            th, td {
+                padding: 1em .5em ;
+                text-align: center;
+                @include fontSize(18);
+            }
+        }
+    }
+
+    .dailywork-right {
+
+        .dailywork-right-child {
+            margin-top: 1.45em;
+            padding: 1em;
+            border: 4px solid $colorSub3;
+            background-color: rgba($colorWhite, 0.95);
+            // border-radius: 6px;
+            text-align: center;
+            @include fontSize(16);
+
+            .dailywork-icon-01::before {
+                    @include fontawesome('Brands');
+                    content: '\f368';
+                    @include fontSize(20);
+                    margin-right: 8px;
+                    color: $colorSub3;
+            }
+            .dailywork-icon-02::before {
+                    @include fontawesome();
+                    content: '\f29d';
+                    @include fontSize(23);
+                    margin-right: 6px;
+                    color: $colorSub3;
+            }
+            .dailywork-icon-03::before {
+                    @include fontawesome();
+                    content: '\f2cd';
+                    @include fontSize(20);
+                    margin-right: 8px;
+                    color: $colorSub3;
+            }
+
+            dt, dd {
+                padding: .5em;
+            }
+
+            dt {
+                border-bottom : dotted 1px $colorSub3;
+                margin-bottom: .5em;
+                padding-bottom: .75em;
+            }
+            p{
+                border-bottom : dotted 1px $colorSub3;
+                padding: .5em .5em 1em .5em;
+                font-weight: bold;
+            }
+
+            table {
+
+                width: 100%;
+                th {
+                    width: 55%;
+                }
+
+                td {
+                    text-align: left;
+                }
+
+                tr:last-child {
+                        padding-bottom: .5em;
+                }
+            }
+        }
+    }
+
+    @media print, screen and (min-width: $breakpoint_tb_up) {
+        display: flex;
+        justify-content:space-around;
+
+        .dailywork-left {
+            flex-basis: 60%;
+            padding: 0 1em;
+    
+            table {
+                width: 100%;
+            }
+        }
+
+        .dailywork-right {
+            padding: 0 1em;
+            flex-basis: 40%;
+
+            .dailywork-right-child {
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+.dailylife-caution {
+
+    position: relative;
+    padding:2em;
+
+    &::before, &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 25px;
+        border-style: solid;
+        border-color: $colorSub3;
+    }
+
+    &::before {
+        top: 0;
+        left: 0;
+        border-width: 5px 5px 0px 5px;
+    }
+
+    &::after {
+        bottom: 0;
+        left: 0;
+        border-width: 0px 5px 5px 5px;
+    }
+
+    h4 {
+        border-bottom: 1px dotted $colorFont;
+        padding-bottom: .5em;
+
+        &::before {
+            @include fontawesome();
+            content: '\f06a';
+            margin-right: 7px;
+            color: $colorSub3;
+        }
+    }
+
+    ul {
+
+        li::before {
+            content: '・';
+        }
+    }
+
+}

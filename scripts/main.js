@@ -3,6 +3,22 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    //toggle menu
+    const toggle = document.getElementById('js-toggle');
+    toggle.addEventListener('click', function() {
+        const nav = document.getElementById('js-nav');
+        let menuText = document.getElementById('js-menuText');
+        
+        toggle.classList.toggle('navOpen');
+        nav.classList.toggle('navOpen');
+
+        if(nav.classList.contains('navOpen')) {
+            menuText.textContent = 'close';
+        } else {
+            menuText.textContent = 'menu';
+        }
+    });
+
 
     //フォントサイズ変更
     const fontSizebutton = document.querySelectorAll('.font-size-button');
@@ -35,9 +51,99 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
+    //////////////////////////////////////////
+    /// title-text animation
+    //////////////////////////////////////////
+
+    const titleText = document.querySelector('.title-text-inner');
+    
+    window.addEventListener('load', function() {
+
+        if(titleText) {
+            titleText.classList.add('start-animation');
+        }
+    })
+
+    /////////////////////////////////////////
+    ////       to-top             ///////////
+    /////////////////////////////////////////
+
+    const toTop = document.getElementById('js-toTop');
+    
+    document.addEventListener('scroll', function() {
+
+        const scrollValue = window.scrollY || window.pageYOffset; //IEはscrollYが使えない
+
+        if(scrollValue > 500) {
+            toTop.classList.add('display-on');
+        } else {
+            toTop.classList.remove('display-on');
+        }
+    });
+
+    toTop.addEventListener('click', function (e) {
+
+		let scrollTop = function () {
+
+			const nowY = window.scrollY || window.pageYOffset; 
+			window.scrollTo(0, Math.floor(nowY * 0.8)); // liner風なら、window.scrollTo(0, nowY - 100);
+
+			let timer = window.setTimeout(scrollTop, 20);
+
+			if (nowY === 0) {
+				clearTimeout(timer);
+			}
+		}
+
+		scrollTop();
+		e.preventDefault();
+
+	}, false);
+
+
     //copyright 今年の年を取得
-    const thisYear = document.getElementById('thisyear-js');
+    const thisYear = document.getElementById('js-thisyear');
     thisYear.textContent = new Date().getFullYear();
+
+
+    /////////////////////////////////////////////
+    //  Object-fit Polyfill   ///////////////////
+    /////////////////////////////////////////////
+
+    const body = document.body;
+    //topページのみ適用
+    if(body.classList.contains('home')) {
+        objectFitImages('.ofi-img');
+    }
+
+
+
+    ////////////////////////////////////////////
+    //  Heroイメージ
+    ///////////////////////////////////////////
+
+    const heroImgs = document.querySelectorAll('.ofi-img');
+
+    function heroImageHeight() {
+        const windowWidth = window.innerWidth;
+        let setHeight;
+        if(windowWidth < 960) {
+            setHeight = Math.floor((windowWidth * 2) / 3);
+        } else {
+            setHeight = 650;
+        }
+
+        for(let i = 0; i < heroImgs.length; i++) {
+            heroImgs[i].style.height = setHeight + 'px';
+        }
+    }
+
+    window.addEventListener('load', heroImageHeight );
+    window.addEventListener('resize', heroImageHeight );
+    
+    
+    
+
 
 });
 

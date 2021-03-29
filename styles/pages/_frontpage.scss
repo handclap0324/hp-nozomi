@@ -1,19 +1,225 @@
 
+.home {
+    section:nth-child(2) {
+        background-color: rgba($colorSub3, 0.2);
+        background-color: rgba($colorBg, 0.5);
+        padding-top: 4em;
+        padding-bottom: 4em;
+    
+        .container-main {
+            margin-top: 0;
+           
+            .contents-box:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    aside {
+        margin-top: 0;
+    }
+}
+
+h2.top-h2-heading {
+    @include fontSize(20);
+    margin: 0 auto;
+    margin-bottom: 1em;
+  
+    & span.number {
+      display: block;
+      font-size: 40px;
+      color: $colorMain;
+      letter-spacing: 0.075em;
+    }
+  
+    &::after, &::before {
+      display: none;
+    }
+
+    &.last {
+      margin-top: -1em;
+    }
+  }
+
+.contents-box-textbox {
+    padding: 2em;
+    background-color: rgba($colorSub, 0.8);
+    border: 2px solid $colorSub;
+    position: relative;
+
+    p{
+        margin-bottom: 0;
+        line-height: 1.7;
+    }
+
+    .indent span {
+        margin-right: .5em;
+    }
+
+    ul {
+        font-weight: bold;
+
+        li {
+            margin-top: .35em;
+        }
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0px;
+        left: 50%;
+        width: 80px;
+        height: 8px;
+        background-color: $colorMain;
+        transform: translateX(-50%);
+
+    }
+}
+
+.container-news {
+    margin-top: 5em;
+}
+
 .table-news {
 
-    max-width: 960px;
-    margin: 0 auto auto 0;
+    max-width: 980px;
+    margin: 2em auto 0 auto;
+    background-color: $colorWhite;
+
+    table {
+
+        width: 100%;
+
+        tr {
+            border: 1px solid $colorBg;
+            
+            th {
+                white-space: nowrap;
+                padding: .5em .5em;
+                position: relative;
+                transition: background-color .2s .3s linear;
+                z-index: 0;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0%;
+                    height: 100%;
+                    z-index: -1;
+                }
+            }  
+            
+            td {
+                padding: 0em .5em;
+                position: relative;
+                z-index: 0;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0%;
+                    height: 100%;
+                    background-color: #f0fbf5;
+                    background-color: rgba($colorSub3, .15);
+                    z-index: -1;
+                    transition: width .25s .3s ease-in-out;
+                }
+
+                a {
+                    color: $colorFont;
+                    padding: 1em 0;
+                    transition: all 0s;
+                    z-index: 0;
+                }
+            }
+
+            &:hover {
+                td::before {
+                    width: 100%;
+                }
+
+                th {
+                    background-color: rgba($colorMain, 0.5);
+                } 
+            }
+        
+        }
     
-    tr {
-        border: 1px solid #ddd;
+        @media print, screen and (min-width: $breakpoint-tb-up) {
+            tr {
+
+                th, td {
+                    padding: 0em 2em;
+                }
+            }
+        }
+
+        @media only screen and (max-width: $breakpoint-tb) {
+
+            tr{
+                th, td {
+                    width: 100%;
+                    display: block;
+                }
+
+                th {
+                    padding: 1em 0 0 1em;
+                }
+    
+                td a {
+                    padding: .5em 0 1em .5em;
+                }
+            }
+        }
+    }
+}
+
+
+//面会について
+.to-visit {
+    // text-align: center;
+    border: 4px solid $colorSub3;
+    border-radius: 3px;
+    margin-top: 2em;
+
+    h4 {
+        margin: 0;
+        padding: 0;
     }
 
-    th, td {
-        padding: 1em;
-    }
+    a {
+        color: $colorSub3;
+        padding: 1em 1.5em;
+        position: relative;
+        background-color: $colorWhite;
 
-    th {
-        white-space: nowrap;
+        &::after {
+            @include fontawesome();
+            content: '\f054';
+            position: absolute;
+            top: 50%;
+            right: 3%;
+            transform: translateY(-50%);
+            width: 30px;
+            font-size: 25px;
+            transition: right .2s linear;
+
+
+        }
+
+        &:hover {
+            background-color: $colorSub3;
+            color: $colorWhite;
+
+            &::after {
+                right: 1%;
+            }
+        }
     }
 }
 
@@ -21,25 +227,30 @@
 //パンフレットダウンロード
 .pdf-list.pamphlet-pdf {
     // border: 1px solid red;
-    padding: 0em 1em 3em 1em;
+    padding: 0em 1em 2.5em 1em;
     margin-top: -1em;
 
     a{
         margin: 0 auto;
-        padding: 2.5em 0;
-        max-width: 1140px;
+        padding: .75em 0;
+        max-width: 350px;
+        @include fontSize(16);
         text-align: center;
+        border-radius: 1000px;
+        color: $colorWhite;
+        opacity: 0.9;
         
-        border: 1px solid $colorMain;
-        border-radius: 2px;
+        border: 2px solid $colorWhite;
         
-        background: url('.././img/pdf_icon.png') no-repeat right 5% center;
-        background-size: 45px 52px;
-        background-color: $colorWhite;
+        background: url('.././img/pdf_icon.png') no-repeat right 8.5% center;
+        background-size: 18px 20px;
+        background-color: $colorSub3;
+        transition: all .2s linear;
 
-        @media (max-width: $breakpoint_tb) {
-            //background-size: 30px 35px;
-            max-width: 502px;
+        &:hover {
+            font-weight: normal;
+            opacity: 1.0;
+            border-color: $colorSub3;
         }
     }
 }

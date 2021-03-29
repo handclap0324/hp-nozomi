@@ -20,6 +20,7 @@
     <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">-->
 
     <link rel='stylesheet' id='font-awesome-css'  href='https://use.fontawesome.com/releases/v5.6.1/css/all.css?ver=20200327' type='text/css' media='all' />
     <link rel="stylesheet" href="styles/style.css">
@@ -36,13 +37,42 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:locale" content="ja_JP" />
   </head>
-<body>
 
+<body>
   <header>
+    <div class="header-top">
+      <div class="container">
+        <h1>社会福祉法人 兵庫県社会福祉事業団</h1>
+      </div>
+    </div>
     <div class="container container-header container-no-padding">
       <div class="logo-area">
-        <h1>社会福祉法人 兵庫県社会福祉事業団</h1>
         <p class="logo-area-img"><a href="index.html"><img src="img/logo.png" alt="のぞみの家ロゴ"></a></p>
+      </div>
+      <div class="nav-area">
+        <div class="nav-access-sitemap">
+          <div class="nav-area-access">
+            <a href="facility.html#accessmap">アクセス<span>access</span></a>
+          </div>
+          <div class="nav-area-sitemap">
+            <a href="sitemap.html">サイトマップ</a>
+          </div>
+        </div>
+        <div id="js-toggle">
+          <span class="navBorder"></span>
+          <span class="navBorder"></span>
+          <span class="navBorder"></span>
+          <span id="js-menuText">menu</span>
+        </div>
+        <nav id="js-nav" >
+          <ul class="menu container container-no-padding">
+            <li><a href="index.html">ホーム<span>Home</span></a></li>
+            <li><a href="facility.html">施設案内<span>About facility</span></a></li>
+            <li><a href="project.html">事業案内<span>About project</span></a></li>
+            <li><a href="dailylife.html">生活案内<span>About dailylife</span></a></li>
+            <li><a href="use.html">利用案内<span>About use</span></a></li>
+          </ul>
+        </nav>
       </div>
       <div class="font-size-area">
         <p class="font-size-title">[ 文字サイズ ]</p>
@@ -50,58 +80,59 @@
         <button class="font-size-button font-size-large" data-fontsize="18">拡大</button>
       </div>
     </div>
-    <nav>
-      <ul class="container container-no-padding">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="facility.html">施設案内</a></li>
-        <li><a href="project.html">事業案内</a></li>
-        <li><a href="dailylife.html">生活案内</a></li>
-        <li><a href="use.html">利用案内</a></li>
-      </ul>
-    </nav>
   </header>
 
+  <div class="pagetitle pagetitle-sub">
+    <div class="pagetitle-inner container container-no-padding">
+      <div class="title-text">
+        <div class="title-text-inner">
+          <h2>のぞみん号<br><span class="dib">機関紙</span></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <main>
-    <section>
-      <div class="container container-main">
-        <h2>のぞみん号 機関紙</h2>
+    <div class="container container-main">
+      <div class="contents-box">
         <ul class="pdf-list officialorgan-pdf">
-          <li><a href="pdf/2021_01kikansi.pdf" target="_blank"><dl><dt>2021年1月</dt><dd>令和3年新年号（2021年1月）</dd></dl></a></li>
-          <li><a href="pdf/2020_05kikansi.pdf" target="_blank"><dl><dt>2020年5月</dt><dd>令和2年春号（2020年5月）</dd></dl></a></li>
-          <li><a href="pdf/2020_01kikansi.pdf" target="_blank"><dl><dt>2020年1月</dt><dd>令和2年新年号（2020年1月）</dd></dl></a></li>
-          <li><a href="pdf/2019_05kikansi.pdf" target="_blank"><dl><dt>2019年5月</dt><dd>令和元年春号（2019年5月）</dd></dl></a></li>
-          <li><a href="pdf/2019_01kikansi.pdf" target="_blank"><dl><dt>2019年1月</dt><dd>平成31年新年号（2019年1月）</dd></dl></a></li>
-          <li><a href="pdf/2018_05kikansi.pdf" target="_blank"><dl><dt>2018年5月</dt><dd>平成30年春号（2018年5月）</dd></dl></a></li>
-          <li><a href="pdf/2017_05kikansi.pdf" target="_blank"><dl><dt>2017年5月</dt><dd>平成29年春号（2017年5月）</dd></dl></a></li>
-          <li><a href="pdf/2016_06kikansi.pdf" target="_blank"><dl><dt>2016年6月</dt><dd>平成28年春号（2016年6月）</dd></dl></a></li>
-          <li><a href="pdf/2015_06kikansi.pdf" target="_blank"><dl><dt>2015年6月</dt><dd>平成27年春号（2015年6月）</dd></dl></a></li>
-          <li><a href="pdf/2015_01kikansi.pdf" target="_blank"><dl><dt>2015年1月</dt><dd>平成27年新年号（2015年1月）</dd></dl></a></li>
-          <li><a href="pdf/2014_06kikansi.pdf" target="_blank"><dl><dt>2014年6月</dt><dd>平成26年春号（2014年6月）</dd></dl></a></li>
-          <li><a href="pdf/2014_01kikansi.pdf" target="_blank"><dl><dt>2014年1月</dt><dd>平成26年新年号（2014年1月）</dd></dl></a></li>
-          <li><a href="pdf/2013_6kikansi.pdf" target="_blank"><dl><dt>2013年6月</dt><dd>平成25年春号（2013年6月）</dd></dl></a></li>
-          <li><a href="pdf/2013-1kikansi.pdf" target="_blank"><dl><dt>2013年1月</dt><dd>平成25年新年号（2013年1月）</dd></dl></a></li>
-          <li><a href="pdf/2012_05kikansi.pdf" target="_blank"><dl><dt>2012年5月</dt><dd>平成24年春号（2012年5月）</dd></dl></a></li>
-          <li><a href="pdf/2012_01kikansi.pdf" target="_blank"><dl><dt>2012年1月</dt><dd>平成24年新年号（2012年1月）</dd></dl></a></li>
-          <li><a href="pdf/2011_05kikansi.pdf" target="_blank"><dl><dt>2011年5月</dt><dd>平成23年春号（2011年5月）</dd></dl></a></li>
-          <li><a href="pdf/2011_01kikansi.pdf" target="_blank"><dl><dt>2011年1月</dt><dd>平成23年新年号（2011年1月）</dd></dl></a></li>
-          <li><a href="pdf/2010_05kikansi.pdf" target="_blank"><dl><dt>2010年5月</dt><dd>平成22年春号（2010年5月）</dd></dl></a></li>
-          <li><a href="pdf/2010_01kikansi.pdf" target="_blank"><dl><dt>2010年1月</dt><dd>平成22年新年号（2010年1月）</dd></dl></a></li>
-          <li><a href="pdf/2009_06kikansi.pdf" target="_blank"><dl><dt>2009年6月</dt><dd>平成21年春号（2009年6月）</dd></dl></a></li>
-          <li><a href="pdf/2008_05kikansi.pdf" target="_blank"><dl><dt>2008年5月</dt><dd>平成20年春号（2008年5月）</dd></dl></a></li>
+          <li><a href="pdf/2021_01kikansi.pdf" target="_blank"><dl><dt>2021年1月</dt><dd>令和3年新年号<span class="dib">（2021年1月）</span></dd></dl></a></li>
+          <li><a href="pdf/2020_05kikansi.pdf" target="_blank"><dl><dt>2020年5月</dt><dd>令和2年春号<span class="dib">（2020年5月）</span></dd></dl></a></li>
+          <li><a href="pdf/2020_01kikansi.pdf" target="_blank"><dl><dt>2020年1月</dt><dd>令和2年新年号<span class="dib">（2020年1月）</span></dd></dl></a></li>
+          <li><a href="pdf/2019_05kikansi.pdf" target="_blank"><dl><dt>2019年5月</dt><dd>令和元年春号<span class="dib">（2019年5月）</span></dd></dl></a></li>
+          <li><a href="pdf/2019_01kikansi.pdf" target="_blank"><dl><dt>2019年1月</dt><dd>平成31年新年号<span class="dib">（2019年1月）</span></dd></dl></a></li>
+          <li><a href="pdf/2018_05kikansi.pdf" target="_blank"><dl><dt>2018年5月</dt><dd>平成30年春号<span class="dib">（2018年5月）</span></dd></dl></a></li>
+          <li><a href="pdf/2017_05kikansi.pdf" target="_blank"><dl><dt>2017年5月</dt><dd>平成29年春号<span class="dib">（2017年5月）</span></dd></dl></a></li>
+          <li><a href="pdf/2016_06kikansi.pdf" target="_blank"><dl><dt>2016年6月</dt><dd>平成28年春号<span class="dib">（2016年6月）</span></dd></dl></a></li>
+          <li><a href="pdf/2015_06kikansi.pdf" target="_blank"><dl><dt>2015年6月</dt><dd>平成27年春号<span class="dib">（2015年6月）</span></dd></dl></a></li>
+          <li><a href="pdf/2015_01kikansi.pdf" target="_blank"><dl><dt>2015年1月</dt><dd>平成27年新年号<span class="dib">（2015年1月）</span></dd></dl></a></li>
+          <li><a href="pdf/2014_06kikansi.pdf" target="_blank"><dl><dt>2014年6月</dt><dd>平成26年春号<span class="dib">（2014年6月）</span></dd></dl></a></li>
+          <li><a href="pdf/2014_01kikansi.pdf" target="_blank"><dl><dt>2014年1月</dt><dd>平成26年新年号<span class="dib">（2014年1月）</span></dd></dl></a></li>
+          <li><a href="pdf/2013_6kikansi.pdf" target="_blank"><dl><dt>2013年6月</dt><dd>平成25年春号<span class="dib">（2013年6月）</span></dd></dl></a></li>
+          <li><a href="pdf/2013-1kikansi.pdf" target="_blank"><dl><dt>2013年1月</dt><dd>平成25年新年号<span class="dib">（2013年1月）</span></dd></dl></a></li>
+          <li><a href="pdf/2012_05kikansi.pdf" target="_blank"><dl><dt>2012年5月</dt><dd>平成24年春号<span class="dib">（2012年5月）</span></dd></dl></a></li>
+          <li><a href="pdf/2012_01kikansi.pdf" target="_blank"><dl><dt>2012年1月</dt><dd>平成24年新年号<span class="dib">（2012年1月）</span></dd></dl></a></li>
+          <li><a href="pdf/2011_05kikansi.pdf" target="_blank"><dl><dt>2011年5月</dt><dd>平成23年春号<span class="dib">（2011年5月）</span></dd></dl></a></li>
+          <li><a href="pdf/2011_01kikansi.pdf" target="_blank"><dl><dt>2011年1月</dt><dd>平成23年新年号<span class="dib">（2011年1月）</span></dd></dl></a></li>
+          <li><a href="pdf/2010_05kikansi.pdf" target="_blank"><dl><dt>2010年5月</dt><dd>平成22年春号<span class="dib">（2010年5月）</span></dd></dl></a></li>
+          <li><a href="pdf/2010_01kikansi.pdf" target="_blank"><dl><dt>2010年1月</dt><dd>平成22年新年号<span class="dib">（2010年1月）</span></dd></dl></a></li>
+          <li><a href="pdf/2009_06kikansi.pdf" target="_blank"><dl><dt>2009年6月</dt><dd>平成21年春号<span class="dib">（2009年6月）</span></dd></dl></a></li>
+          <li><a href="pdf/2008_05kikansi.pdf" target="_blank"><dl><dt>2008年5月</dt><dd>平成20年春号<span class="dib">（2008年5月）</span></dd></dl></a></li>
         </ul>
-    </section>
+      </div>
+    </div>
   </main>
 
   <aside>
     <div class="container">
       <ul>
-        <li><a href="projectplan.html">事業計画</a></li>
+        <li><a href="research.html">研究発表</a></li>
         <li><a href="officialorgan.html">のぞみんごう[機関紙]</a></li>
         <li><a href="contact.html">お問い合わせ</a></li>
         <li><a href="link.html">リンク</a></li>
       </ul>
       <div class="pdf-list pamphlet-pdf">
-        <li><a href="pdf/pamphlet.pdf" target="_blank">パンフレット</a></li>
+        <a href="pdf/pamphlet.pdf" target="_blank">パンフレット</a>
       </div>
     </div>
   </aside>
@@ -110,19 +141,37 @@
     <div class="footer-inner container">
       <div class="footer-inner-address">
         <p class="footer-inner-address-text">救護施設</p>
-        <p class="footer-inner-address-text">のぞみの家</p>
+        <p class="footer-inner-address-text">のぞみ<span>の</span>家</p>
         <p class="footer-inner-address-text">〒651-2181 兵庫県神戸市西区曙町1070</p>
-        <p class="footer-inner-address-text">TEL（078）927-2727(代表)</p>
+        <p class="footer-inner-address-text">TEL（078）927-2727 (代表)</p>
         <p class="footer-inner-address-text">FAX（078）925-9275</p>
       </div>
+      <div class="footer-inner-sitemap">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="facility.html">施設案内</a></li>
+          <li><a href="project.html">事業案内</a></li>
+          <li><a href="dailylife.html">生活案内</a></li>
+          <li><a href="use.html">利用案内</a></li>
+          <li><a href="facility.html#accessmap">アクセス</a></li>
+          <li><a href="sitemap.html">サイトマップ</a></li>
+        </ul>
+      </div>
       <div class="footer-inner-logo">
-        <img src="img/logo.gif" alt="footer-logo">
+        <img src="img/logo.png" alt="footer-logo">
       </div>
     </div>
     <p class="copyright">
-      <small>&copy; <span id="thisyear-js">2021</span> 兵庫県社会福祉事業団 のぞみの家 <span class="dib">All Rights Reserved.</span></small>
+      <small>&copy; <span id="js-thisyear">2021</span> 兵庫県社会福祉事業団 のぞみの家 <span class="dib">All Rights Reserved.</span></small>
     </p>
   </footer>
+  <div id="js-toTop" class="to-top">
+    <a href="#">
+      <div class="to-top-inner">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+    </a>
+  </div>
   <script src="scripts/main.js"></script>
 </body>
 </html>

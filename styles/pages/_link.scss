@@ -1,0 +1,43 @@
+.links {
+
+    li {
+        border-top: 3px solid $colorBg;
+        border-left: 3px solid $colorBg;
+        border-right: 3px solid $colorBg;
+
+        &.links-borderbottom {
+            border-bottom: 3px solid $colorBg;
+        }
+
+        a {
+            color: $colorFont;
+            padding: 1em;
+            position: relative;
+
+            &::before {
+                @include fontawesome();
+                content: '\f0c1';
+                margin-right: 10px;
+                color: $colorMain;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0%;
+                height: 100%;
+                background-color: #f0fbf5;
+                z-index: -1;
+                transition: width .2s .1s ease-in-out;
+            }
+
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

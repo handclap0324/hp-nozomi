@@ -20,6 +20,7 @@
     <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">-->
 
     <link rel='stylesheet' id='font-awesome-css'  href='https://use.fontawesome.com/releases/v5.6.1/css/all.css?ver=20200327' type='text/css' media='all' />
     <link rel="stylesheet" href="styles/style.css">
@@ -36,13 +37,42 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:locale" content="ja_JP" />
   </head>
-<body>
 
+<body>
   <header>
+    <div class="header-top">
+      <div class="container">
+        <h1>社会福祉法人 兵庫県社会福祉事業団</h1>
+      </div>
+    </div>
     <div class="container container-header container-no-padding">
       <div class="logo-area">
-        <h1>社会福祉法人 兵庫県社会福祉事業団</h1>
         <p class="logo-area-img"><a href="index.html"><img src="img/logo.png" alt="のぞみの家ロゴ"></a></p>
+      </div>
+      <div class="nav-area">
+        <div class="nav-access-sitemap">
+          <div class="nav-area-access">
+            <a href="facility.html#accessmap">アクセス<span>access</span></a>
+          </div>
+          <div class="nav-area-sitemap">
+            <a href="sitemap.html">サイトマップ</a>
+          </div>
+        </div>
+        <div id="js-toggle">
+          <span class="navBorder"></span>
+          <span class="navBorder"></span>
+          <span class="navBorder"></span>
+          <span id="js-menuText">menu</span>
+        </div>
+        <nav id="js-nav" >
+          <ul class="menu container container-no-padding">
+            <li><a href="index.html">ホーム<span>Home</span></a></li>
+            <li><a href="facility.html">施設案内<span>About facility</span></a></li>
+            <li><a href="project.html">事業案内<span>About project</span></a></li>
+            <li><a href="dailylife.html">生活案内<span>About dailylife</span></a></li>
+            <li><a href="use.html">利用案内<span>About use</span></a></li>
+          </ul>
+        </nav>
       </div>
       <div class="font-size-area">
         <p class="font-size-title">[ 文字サイズ ]</p>
@@ -50,44 +80,103 @@
         <button class="font-size-button font-size-large" data-fontsize="18">拡大</button>
       </div>
     </div>
-    <nav>
-      <ul class="container container-no-padding">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="facility.html">施設案内</a></li>
-        <li><a href="project.html">事業案内</a></li>
-        <li><a href="dailylife.html">生活案内</a></li>
-        <li><a href="use.html">利用案内</a></li>
-      </ul>
-    </nav>
   </header>
+
+  <div class="pagetitle pagetitle-use">
+    <div class="pagetitle-inner container container-no-padding">
+      <div class="title-text">
+        <div class="title-text-inner">
+          <h2>利用案内</h2>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <main>
     <section>
       <div class="container container-main">
-        <h2>利用案内</h2>
-        <p>救護施設は、生活保護法に基づく措置施設であり、居住地の福祉事務所からの手続きによって入所することになります。
-          原則として18歳以上の青年男女で、入所中の経費は生活保護法で定められた額で賄われます。
-        </p>
-        <p>入所を希望される方は、お近くの福祉事務所にお問い合わせください。</p>
-        <p>・福祉事務所に入所相談→施設見学→資料作成→面談→入所判定会議→入所</p>
-        <p>以上が入所の大まかな流れになります。画像も参照ください。</p>
-        <div class="photo-space photo-space-use">
-          入所までの流れ画像
+        <div class="contents-box">
+          <p>救護施設は、生活保護法に基づく措置施設ですので、居住地の福祉事務所からの手続きによって入所することになります。
+            対象は心身に何らかのハンディキャップがあるため、地域で生活することが難しい18歳以上の方となります。
+            実際救護施設「のぞみの家」には身体障害のある方、知的障害のある方、精神障害のある方、ホームレスの人等、
+            多様で複合的な課題を持っている人が生活しています。
+          </p>
+          <p>入所を希望される方は、お近くの福祉事務所にお問い合わせください。</p>
+          <div class="flow-text">
+            <p>福祉事務所に入所相談<i class="fas fa-arrow-circle-right"></i>施設見学
+              <i class="fas fa-arrow-circle-right"></i>資料作成
+              <i class="fas fa-arrow-circle-right"></i>面談<i class="fas fa-arrow-circle-right"></i>入所判定会議
+              <i class="fas fa-arrow-circle-right"></i>入所</p>
+          </div>
+            <p>以上が入所の大まかな流れになります。<!--画像も参照ください。--></p>
         </div>
-
+        <div class="contents-box">
+            <h3 class="square-heading01">入所までの流れ</h3>
+            <p>入所までの流れは主に3つあります。参考にしてください。</p>
+          <div class="flow">
+            <div class="flow-box">
+              <h4 class="stripes-heading">福祉事務所からの場合</h4>
+              <p>本人が最寄りの福祉事務所へ相談</p>
+              <p>福祉事務所の方と施設見学</p>
+              <p>本人の入所の意思決定</p>
+              <p>福祉事務所へ入所の意思を伝える</p>
+              <p>福祉事務所から入所依頼</p>
+              <p>利用者台帳・健康診断書を提出</p>
+              <p>入所判定会議を開く</p>
+              <p>福祉事務所へ判定の結果を連絡</p>
+              <p>入 所</p>
+            </div>
+            <div class="flow-box">
+              <h4 class="stripes-heading">病院からの場合</h4>
+              <P>病院<span class="dib">（医療ソーシャルワーカー・ケアマネジャー）</span></P>
+              <P>福祉事務所相談<br>一人暮らしが困難・保証人がいない、他法活用が困難な場合等</P>
+              <P>患者様と桃李園へ施設見学会</P>
+              <P>福祉事務所から入所依頼</P>
+              <P>利用者台帳・健康診断書を提出</P>
+              <P>入所判定会議を開く</P>
+              <P>福祉事務所へ判定の結果を連絡</P>
+              <P>入 所</P>
+            </div>
+            <div class="flow-box">
+              <h4 class="stripes-heading">触法施設からの場合</h4>
+              <p>矯正施設（刑務所・少年刑務所等）出所予定者、矯正施設内の社会福祉士を通じて、福祉事務所へ相談</p>
+              <p>一人暮らしが困難・保証人がいない他法活用が困難な場合等</p>
+              <p>福祉事務所から入所依頼</p>
+              <p>利用者台帳・健康診断書を提出</p>
+              <p>入所判定会議を開く</p>
+              <p>福祉事務所へ判定の結果を連絡</p>
+              <p>入 所</p>
+            </div>
+            <div class="flow-box">
+              <div class="flow-box-right">
+                <div class="flow-remarks">
+                  <img src="img/flow-board.jpg" alt="施設見学について">
+                  <p>施設見学のみも大丈夫です。<br>事前にご連絡ください。</p>
+                </div>
+                <div class="flow-image">
+                  <img src="img/use02.jpg" alt="利用案内画像">
+                </div>
+                <div class="flow-image">
+                  <img src="img/use01.jpg" alt="利用案内画像">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
   <aside>
     <div class="container">
       <ul>
-        <li><a href="projectplan.html">事業計画</a></li>
+        <li><a href="research.html">研究発表</a></li>
         <li><a href="officialorgan.html">のぞみんごう[機関紙]</a></li>
         <li><a href="contact.html">お問い合わせ</a></li>
         <li><a href="link.html">リンク</a></li>
       </ul>
       <div class="pdf-list pamphlet-pdf">
-        <li><a href="pdf/pamphlet.pdf" target="_blank">パンフレット</a></li>
+        <a href="pdf/pamphlet.pdf" target="_blank">パンフレット</a>
       </div>
     </div>
   </aside>
@@ -96,19 +185,37 @@
     <div class="footer-inner container">
       <div class="footer-inner-address">
         <p class="footer-inner-address-text">救護施設</p>
-        <p class="footer-inner-address-text">のぞみの家</p>
+        <p class="footer-inner-address-text">のぞみ<span>の</span>家</p>
         <p class="footer-inner-address-text">〒651-2181 兵庫県神戸市西区曙町1070</p>
-        <p class="footer-inner-address-text">TEL（078）927-2727(代表)</p>
+        <p class="footer-inner-address-text">TEL（078）927-2727 (代表)</p>
         <p class="footer-inner-address-text">FAX（078）925-9275</p>
       </div>
+      <div class="footer-inner-sitemap">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="facility.html">施設案内</a></li>
+          <li><a href="project.html">事業案内</a></li>
+          <li><a href="dailylife.html">生活案内</a></li>
+          <li><a href="use.html">利用案内</a></li>
+          <li><a href="facility.html#accessmap">アクセス</a></li>
+          <li><a href="sitemap.html">サイトマップ</a></li>
+        </ul>
+      </div>
       <div class="footer-inner-logo">
-        <img src="img/logo.gif" alt="footer-logo">
+        <img src="img/logo.png" alt="footer-logo">
       </div>
     </div>
     <p class="copyright">
-      <small>&copy; <span id="thisyear-js">2021</span> 兵庫県社会福祉事業団 のぞみの家 <span class="dib">All Rights Reserved.</span></small>
+      <small>&copy; <span id="js-thisyear">2021</span> 兵庫県社会福祉事業団 のぞみの家 <span class="dib">All Rights Reserved.</span></small>
     </p>
   </footer>
+  <div id="js-toTop" class="to-top">
+    <a href="#">
+      <div class="to-top-inner">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+    </a>
+  </div>
   <script src="scripts/main.js"></script>
 </body>
 </html>

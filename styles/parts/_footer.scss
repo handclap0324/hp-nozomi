@@ -2,21 +2,73 @@
 
 footer {
 
-    background-color: $colorSub;
-    padding-top: 2em;
+    background: linear-gradient(to bottom, $colorMain, $colorMain 38%, $colorSub 38%, $colorSub 100%);
 
-    .footer-inner-address-text {
-        margin: 0;
-        line-height: 1.35;
+    background-color: $colorMain;
+    padding-top: 3em;
 
-        &:nth-child(2) {
-            margin-bottom: 0.25em;
+    .footer-inner-address {
+        margin-bottom: 4em;
+
+        .footer-inner-address-text {
+            margin: 0;
+            line-height: 1.35;
+            color: $colorWhite;
+
+            &:first-child {
+                @include fontSize(14);
+            }
+    
+            &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+                @include fontSize(14);
+            }
+    
+            &:nth-child(2) {
+                margin-bottom: 0.25em;
+                font-weight: bold;
+
+                span {
+                    @include fontSize(14);
+                }
+            }
+        }
+    }
+
+
+    .footer-inner-sitemap {
+
+        background-color: $colorSub;
+
+        ul {
+            width: 100%;
+            li {
+                display: inline-block;
+                width: 45%;
+
+                &:last-of-type {
+                    width: 100%;
+                }
+            }
+        }
+
+        a {
+            color: $colorMain;
+            @include fontSize(14);
+            font-weight: bold;
+            padding: .3em .5em .3em 0;
+            width: 100%;
+
+            &::before {
+                @include fontawesome(Free, normal);
+                content: '\f35a';
+                margin-right: 5px;
+            }
         }
     }
 
     .footer-inner-logo {
-        margin-top: 2em;
-        max-width: 200px;
+        width: 150px;
+        margin: 2em 0 0 auto;
 
         img{
             margin: 0 0 0 auto;
@@ -24,17 +76,51 @@ footer {
     }
 
     .copyright {
+        background-color: $colorCopyright;
         text-align: center;
         line-height: 1.2;
-        margin: 0;
-        padding: 2em 0 1em 0;
+        color: $colorWhite;
+        margin: 2em 0 0 0;
+        padding: 1em 0 1em 0;
+
+        @media only screen and (max-width: $breakpoint_tb) {
+            text-align: left;
+            padding-left: 1em;
+
+            .dib {
+                display: block;
+            }
+        }
     }
 
     @media print, screen and (min-width: $breakpoint-tb-up) {
+
+        background: linear-gradient(to right, $colorMain, $colorMain 40%, $colorSub 40%, $colorSub 100%);
+
+        .footer-inner-address {
+            flex-shrink: 0;
+            flex-basis: 42%;
+        }
+
+
         .footer-inner {
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
+            align-items: flex-start;
+
+            .footer-inner-sitemap {
+                // flex-basis: 60%;
+                background-color: transparent;
+
+                ul {
+                    max-width: 300px;
+                    margin: -.5em 0 0 auto;
+                }
+            }
+
+            .footer-inner-logo{
+                align-self: flex-end;
+            }
         }
     }
 }

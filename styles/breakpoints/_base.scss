@@ -9,6 +9,8 @@ html {
 
 body {
   font-family: $fontBase;
+  position: relative;
+  letter-spacing: 0.05em;
 }
 
 img {
@@ -20,18 +22,283 @@ img {
   //vertical-align: bottom;
 }
 
-h2 {
-  @include fontSize(25);
-}
+////////////////////////////////
+//   h2  見出し   //////////////
+////////////////////////////////
 
 h3,h4 {
   @include fontSize(20);
+  margin-bottom: 1em;
+}
+
+
+////////////////////////////////
+//   h3  見出し   //////////////
+////////////////////////////////
+
+//topページ
+
+
+// h2.number-heading01 {
+//   @include fontSize(20);
+//   position: relative;
+//   overflow: hidden;
+//   padding: .75em 0 .75em 88px;
+//   border-top: 4px solid $colorMain;
+//   margin-bottom: 1.5em;
+//   max-width: 100%;
+//   text-align: left !important;
+
+//     &:before {
+//       position: absolute;
+//       top: -150%;
+//       left: -100px;
+//       width: 183px;
+//       height: 236%;
+//       content: '';
+//       transform: rotate(30deg);
+//       background: $colorMain;
+//     }
+
+//     &::after {
+//       display: none;
+//     }
+
+//     span {
+//       @include fontSize(20);
+//       position: absolute;
+//       z-index: 1;
+//       top: 0;
+//       left: 0;
+//       display: block;
+//       padding-top: 8px;
+//       padding-left: 18px;
+//       color: #fff;
+//     }
+// }
+
+//top 新着
+h3.square-heading {
+  margin-bottom : 1.5em;
+  padding: .75em 0 .75em 1.5em;
+  border: 3px solid $colorMain;
+  background-color: $colorWhite;
+  position: relative;
+  @include fontSize(18);
+ 
+  span.span-heading {
+    display: block;
+    font-weight: normal;
+    @include fontSize(14);
+    color: lighten($colorFont, 50%);
+    margin-top: -.2em;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    bottom: .5em;
+    left: .5em;
+    width: 6px;
+    height: 75%;
+    background-color: $colorMain;
+  }
+}
+
+//施設案内・利用案内など
+
+h3.square-heading01 {
+  margin-bottom : 1.5em;
+  padding: .75em 0 .75em 1.5em;
+  border: 3px solid $colorMain;
+  position: relative;
+  @include fontSize(18);
+ 
+  span.span-heading {
+    display: block;
+    font-weight: normal;
+    @include fontSize(14);
+    color: lighten($colorFont, 50%);
+    margin-top: -.2em;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    bottom: .3em;
+    left: .5em;
+    width: 6px;
+    height: 75%;
+    background-color: $colorMain;
+  }
+}
+
+//事業計画
+h3.number-heading02 {
+  position: relative;
+  border: 3px solid $colorMain;
+  padding-left: 3.9em;
+  padding-top: .3em;
+  padding-bottom: .3em;
+  margin-bottom: 1.5em;
+
+  span {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    height: calc(100% + 4px);
+    padding: .35em .75em;
+    color: $colorWhite;
+    background: $colorMain;
+  }
+
+  span:after {
+    position: absolute;
+    top: calc(50% - 10px);
+    right: -13px;
+    width: 0;
+    height: 0;
+    content: '';
+    border-width: 10px 0 10px 14px;
+    border-style: solid;
+    border-color: transparent transparent transparent $colorMain;
+  }
+
+}
+
+//リンク・面会について
+h3.speechballoon {
+  position: relative;
+  padding: 1em 1.2em;
+  color: $colorMain;
+  @include fontSize(18);
+  border-bottom: 4px solid $colorMain;
+  background: rgba($colorMain, 0.05);
+  margin-bottom: 2em;
+
+  &.color-black {
+    color: $colorFont;
+    border-bottom: 4px solid $colorSub3;
+
+    &::before {
+      border-color:$colorSub3 transparent transparent transparent;
+    }
+  }
+}
+
+h3.speechballoon:before {
+  position: absolute;
+  bottom: -15px;
+  left: 1.2em;
+  width: 0;
+  height: 0;
+  content: '';
+  border-width: 14px 12px 0 12px;
+  border-style: solid;
+  border-color:$colorMain transparent transparent transparent;
+}
+
+h3.speechballoon:after {
+  position: absolute;
+  bottom: -10px;
+  left: 1.2em;
+  width: 0;
+  height: 0;
+  content: '';
+  border-width: 14px 12px 0 12px;
+  border-style: solid;
+  border-color: #EDF9F2 transparent transparent transparent;
+}
+
+
+// h3.border-heading {
+
+//   border: 2px solid $colorFont;
+//   width: 250px;
+//   text-align: center;
+//   padding: .5em 0 1em .5em;
+//   position: relative;
+//   margin-bottom: 1em;
+//   border-radius: 6px 6px 0 0;
+
+//   &::after {
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 10px;
+//     content: '';
+//     border-top: 2px solid $colorFont;
+//     background-image: -webkit-repeating-linear-gradient(135deg, $colorFont, $colorFont 1px, transparent 2px, transparent 5px);
+//     background-image: repeating-linear-gradient(-45deg, $colorFont, $colorFont 1px, transparent 2px, transparent 5px);
+//     background-size: 7px 7px;
+//     -webkit-backface-visibility: hidden;
+//     backface-visibility: hidden;
+//   }
+// }
+
+
+h3.double-underbar {
+  position: relative;
+  @include fontSize(25);
+  padding: .2em 0;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border-bottom: 5px solid $colorBg;
+  max-width: 580px;
+  
+
+  &::before {
+    position: absolute;
+    content: '';
+    bottom: -5px;
+    left: 0;
+    width: 20%;
+    min-width: 150px;
+    height: 4px;
+    background-color: $colorMain;
+    z-index: 2;
+  }
+  
+}
+
+///////////////////////////////////
+//  h4
+///////////////////////////////////
+// アクセスマップ
+
+h4 {
+  @include fontSize(18);
+}
+
+h4.stripes-heading {
+
+  position: relative;
+  max-width: 210px;
+  margin: 0 auto 3em auto;
+
+  &::after {
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    content: '';
+    background-image: repeating-linear-gradient(-45deg, $colorSub3, $colorSub3 1px, transparent 2px, transparent 5px);
+    background-size: 7px 7px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+h5 {
+  @include fontSize(16);
 }
 
 a {
   // @include link-color(adjust-hue($colorMain, 45deg));
   @include link-color($colorMain);
-  transition     : 0.3s;
+  transition     : 0.5s;
   text-decoration: none;
   display        : block;
   word-break     : break-all; //URL英文字の折り返し
@@ -43,6 +310,10 @@ ol, ul, dl {
   padding: 0;
 }
 
+dt {
+  margin-bottom: .5em;
+}
+
 li {
   list-style: none;
 }
@@ -50,6 +321,53 @@ li {
 .dib {
   display: inline-block;
 }
+
+.mt2em {
+  margin-top: 2em;
+}
+
+.mb1em {
+  margin-bottom: 1em;
+}
+
+.mb2em {
+  margin-bottom: 2em;
+}
+
+.pb1em {
+  padding-bottom: 1em;
+}
+
+.pb2-5em {
+  padding-bottom: 2.5em !important;
+}
+
+.fcsub3 {
+  color: $colorSub3;
+}
+
+//字下げを考慮したインデント（bofoe要素）
+.indent {
+  display    : flex;
+  align-items: baseline;
+}
+
+//marker
+.marker {
+  padding: .25em .5em;
+  background-image: linear-gradient(left, transparent 50%, $colorSub 50%);
+  background-repeat: repeat-x;
+  background-size: 200% .8em;
+  background-position: 0 1em;
+  transition: background 1.5s linear;
+  
+
+  &.inview {
+      background-position: -100% 1em;
+  }
+}
+
+
 
 
 
