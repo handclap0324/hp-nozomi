@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 
     <link rel='stylesheet' id='font-awesome-css'  href='https://use.fontawesome.com/releases/v5.6.1/css/all.css?ver=20200327' type='text/css' media='all' />
-    <link rel="stylesheet" href="styles/style.css?ver=20210329">
+    <link rel="stylesheet" href="styles/style.css?ver=2021033001">
     <!-- favicon -->
     <link rel="icon" href="img/favicon.ico" />
     <!-- ogp設定 -->
@@ -77,12 +77,19 @@
     </div>
   </header>
 
-  <div class="hero">
+  <!--Loading-->
+  <div id="js-loading" class="loading">
+    <div class="loading-inner">
+      <p id="js-loading-logo" class="loading-logo"><img src="img/logo.png" alt="loading-logo"></p>
+    </div>
+  </div>
+
+  <div id="js-hero" class="hero">
     <div class="hero-image">
       <img class="ofi-img" src="img/hero01.jpg" alt="ヒーローイメージ">
       <div class="hero-image-text">
         <div class="hero-image-text-inner">
-          <p>夢と潤いのある<span class="dib">生活を目指して</span></p>
+          <p>夢と希望を与える<span class="dib">地域移行を目指して</span></p>
         </div>
       </div>
       
@@ -107,12 +114,12 @@
     <section>
       <div class="container container-main">
         <div class="contents-box">
-          <h2 class="top-h2-heading"><span class="number">01</span>地域社会と繋がる <span class="dib">ミッションの実現へと繋がる</span></h2>
+          <h2 class="top-h2-heading"><span class="number">01</span>地域社会と繋がる　<span class="dib">私たちのミッションへの</span><span class="dib">実現に繋がる</span></h2>
           <div class="contents-box-textbox">
             <p><strong>源氏物語第13帖「明石」において、光源氏と明石の君が初めて出会ったとされる「出会い橋」、その近くに位置するここ
               救護施設「のぞみの家」では、100名の利用者が「自立」を目指して、総合リハビリテーションセンターの機能も生かしながら、各自のペースで
-              訓練に励んでいます。利用者一人ひとりが生きがいを持ち、地域社会に繋がり、地域移行できるよう支援することが、
-              私たちのミッション(社会的使命)を実現していくことに繋がっています。</strong></p>
+              訓練に励んでいます。利用者一人ひとりが生きがいを持ち、地域社会と繋がり、地域移行できるよう支援することが、
+              私たちのミッション(社会的使命)への実現に繋がっています。</strong></p>
           </div>
         </div>
         <div class="contents-box">
@@ -149,6 +156,7 @@
                 <th>2020年10月5日</th>
                 <td><a href="officialorgan.html">機関誌令和2年春号「のぞみんごう」掲載しました。</a></td>
               </tr>
+              <tr>
                 <th>2020年2月26日</th>
                 <td><a href="officialorgan.html">機関誌令和2年新年号「のぞみんごう」掲載しました。</a></td>
               </tr>
@@ -239,7 +247,7 @@
       </div>
     </a>
   </div>
-  <script src="scripts/main.js"></script>
+  <script src="scripts/main.js?ver=2021033001"></script>
   <!--Object-fit : Polyfill for IE-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.min.js"></script>
 </body>

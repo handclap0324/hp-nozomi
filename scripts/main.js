@@ -3,6 +3,27 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    //Loading(sessionStrage管理)
+
+    const animationTime = 4000; //cssでのアニメーション時間
+    const loading = document.getElementById('js-loading');
+    const hero = document.getElementById('js-hero');
+
+    if(hero !== null && loading !== null) {
+
+        if (sessionStorage.getItem("nozomi-visited") ) {
+            loading.style.display = "none";
+            hero.classList.add('animation-start');
+        } else {
+            sessionStorage.setItem("nozomi-visited", 1);
+            setTimeout(function(){
+                hero.classList.add('animation-start');
+            }, animationTime);
+        }
+    }
+
+
+
     //toggle menu
     const toggle = document.getElementById('js-toggle');
     toggle.addEventListener('click', function() {
@@ -55,14 +76,14 @@ document.addEventListener('DOMContentLoaded', function() {
     /// title-text animation
     //////////////////////////////////////////
 
+    const pageTitle = document.querySelector('.pagetitle');
     const titleText = document.querySelector('.title-text-inner');
-    
-    window.addEventListener('load', function() {
 
-        if(titleText) {
+    if(pageTitle && titleText) {
+        setTimeout(function() {
             titleText.classList.add('start-animation');
-        }
-    })
+        }, 750); 
+    }
 
     /////////////////////////////////////////
     ////       to-top             ///////////
@@ -117,18 +138,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-
     ////////////////////////////////////////////
     //  Heroイメージ
     ///////////////////////////////////////////
 
     const heroImgs = document.querySelectorAll('.ofi-img');
+    const heaederHeight = 121; // headerの高さ
+
 
     function heroImageHeight() {
         const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const maxHeight = 750;
         let setHeight;
-        if(windowWidth < 960) {
+        if(windowWidth < 1025) {
             setHeight = Math.floor((windowWidth * 2) / 3);
+        } else if (windowWidth > 1780) {
+            setHeight = maxHeight;
+        } else if(windowHeight - heaederHeight < maxHeight ){
+            setHeight = windowHeight - heaederHeight;
         } else {
             setHeight = 650;
         }
@@ -138,11 +166,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    window.addEventListener('load', heroImageHeight );
-    window.addEventListener('resize', heroImageHeight );
-    
-    
-    
+    if(heroImgs) {
+        heroImageHeight();
+        window.addEventListener('resize', heroImageHeight );
+    }
 
 
 });

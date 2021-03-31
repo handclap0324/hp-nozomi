@@ -196,33 +196,15 @@ aside {
         left: 50%;
         transform: translate(-50%, -50%);
 
-        h2 {
-            @include fontSize(25);
-            letter-spacing: 0.1em;
-            max-width: 275px;
-            margin: 0 auto;
-            text-align: center;
-            color: $colorFont;
-            line-height: 1.35;
-            position: relative;
-            opacity: 0;
-            animation: titleText .1s 1.5s linear forwards;
-            @media only screen and (max-width: $breakpoint_tb) {
-                font-size: 20px;
-            }
-        }
-
         &-inner {
-            // width: 50%;
             width: 300px;
             z-index: 5;
             padding-top: 2em;
             padding-bottom: 2em;
 
-            background-color: rgba($colorWhite, 0.75);
+            background-color: rgba($colorWhite, 0.85);
             transform-origin: center left;
             transform: scaleX(0);
-            // animation: titleAnime .4s 0.7s ease-in-out forwards;
             position: relative;
 
             @media only screen and (max-width: $breakpoint-sp) {
@@ -241,16 +223,36 @@ aside {
                 background-color: $colorFont;
                 transform: translateX(-50%);
                 opacity: 0;
-                // animation: titleText .2s 1.0s linear forwards;
+            }
+
+            h2 {
+                @include fontSize(25);
+                letter-spacing: 0.1em;
+                max-width: 275px;
+                margin: 0 auto;
+                text-align: center;
+                color: $colorFont;
+                line-height: 1.35;
+                position: relative;
+                opacity: 0;
+                @media only screen and (max-width: $breakpoint_tb) {
+                    font-size: 20px;
+                }
             }
 
             &.start-animation {
-                animation: titleAnime .4s 0.7s ease-in-out forwards;
+                animation: titleAnime .4s 0s ease-in-out forwards;
 
                 &::before {
-                    animation: titleText .2s 1.0s linear forwards;
+                    animation: titleText .2s .3s linear forwards;
+                }
+
+                h2 {
+                    animation: titleText .2s .3s linear forwards;
                 }
             }
+
+
         }
     }
 
@@ -342,6 +344,15 @@ aside {
 
         &:hover {
             background-color: #006D2A;
+        }
+
+        @media only screen and (max-width: $breakpoint-tb-up) {
+            &:hover {
+                background-color: $colorMain;
+            }
+            &:active {
+                background-color: #006D2A;
+            }
         }
     }
     
