@@ -33,6 +33,14 @@
             max-width: 425px;
             margin: 0 auto;
             padding: .5em 3%;
+            transform: translateY(15%);
+            opacity: 0;
+            transition: transform .5s ease-out .5s, opacity .7s ease-in .5s;
+
+            &.inview {
+                transform: translateY(0%);
+                opacity: 1;
+            }
 
             img {
                 box-shadow: 0px 0px 10px -3px rgba(29, 19, 19, 0.35);

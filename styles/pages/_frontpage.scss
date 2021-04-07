@@ -66,10 +66,10 @@
 
 .home {
     section:nth-child(2) {
-        background-color: rgba($colorSub3, 0.2);
         background-color: rgba($colorBg, 0.5);
         padding-top: 4em;
         padding-bottom: 4em;
+        margin-top: 5em;
     
         .container-main {
             margin-top: 0;
@@ -88,14 +88,20 @@
 h2.top-h2-heading {
     @include fontSize(20);
     margin: 0 auto;
-    margin-bottom: 1em;
+    margin-bottom: 1.25em;
   
     & span.number {
       display: block;
-      font-size: 40px;
-      color: $colorMain;
-      letter-spacing: 0.075em;
+      font-size: 65px;
+      color: rgba($colorMain, 1);
+      letter-spacing: 0.05em;
     }
+    // & span.number {
+    //   display: block;
+    //   font-size: 40px;
+    //   color: $colorMain;
+    //   letter-spacing: 0.075em;
+    // }
   
     &::after, &::before {
       display: none;
