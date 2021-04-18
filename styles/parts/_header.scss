@@ -1,5 +1,8 @@
 header {
 
+    overflow: hidden;
+    font-size: 16px;
+
     .header-top {
         background-color: $colorMain;
         padding: .2em 0;
@@ -8,10 +11,9 @@ header {
             margin: 0;
             color : $colorWhite;
         }
-
     }
-    font-size: 16px;
-    .container-header {
+
+    .container-inner {
         display: flex;
         justify-content: space-between;
 
@@ -24,13 +26,13 @@ header {
             padding-top: .25em;
 
             &-img {
-                max-width: 275px;
+                max-width: 220px;
                 margin-bottom: .5em;
-                margin-top: .5em;
+                margin-top: .85em;
 
                 @media (max-width: 960px) {
                     margin-top: 1em;
-                    max-width: 235px;
+                    max-width: 210px;
                 }
 
                 @media only screen and (max-width: $breakpoint-tb) {
@@ -56,22 +58,24 @@ header {
             margin: 0 0 .5em 0;
             text-align: center;
             font-size: 14px;
-            // border: 1px solid white;
             padding-right: .75em;
         }
     
         .font-size-button {
             background-color: #fff;
-            border-color: $colorSub3;
             font-size: 14px;
             width: 70px;
+            border: 2px solid $colorSub3;
             border-radius: 6px;
             outline: none;
-            padding-top: 5px;
+            padding-top: 3px;
+            padding-bottom: 2px;
             margin-right: 5px;
+            transition: all .2s;
     
             &:hover {
-                opacity: .8;
+                color: $colorWhite;
+                background-color: rgba($colorSub3, 0.6);
             }
         }
     
@@ -112,7 +116,6 @@ header {
             margin: 0 0 0 auto;
 
             .nav-access-sitemap {
-
                 display: flex;
                 justify-content: flex-end;
                 background-color: $colorMain;
@@ -201,7 +204,6 @@ header {
                                 transform: translate(-50px, 12px);
                                 opacity: 0;
                                 transition: all .2s ease-in-out;
-
                             }
 
                             &::after {
@@ -216,7 +218,6 @@ header {
                                 transform: translate(50px, -12px);
                                 opacity: 0;
                                 transition: all .2s ease-in-out;
-
                             }
 
                             &:hover {
@@ -238,7 +239,6 @@ header {
                         }
                     }
                 }
-    
             }
 
             #js-menuText{
@@ -416,5 +416,67 @@ header {
             color: $colorMain;
             font-size: 10px;
         }
+    }
+}
+
+@media only screen and (min-width: $breakpoint-tb-up) {
+
+    header {
+
+        height: 121px;
+        .container-header.fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            max-width: 100%;
+            z-index: 500;
+            background-color: rgba($colorWhite, 1);
+            border-bottom: 3px solid rgba($colorMain, 0.8);
+            box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, .1);
+            opacity:  0;
+            transform: translateY(-100%);
+            animation: fixedNavMove .5s ease-in forwards;
+
+            .nav-access-sitemap, .font-size-area {
+                display: none;
+            }
+
+            .container-inner {
+                max-width: $widthBase;
+                margin: 0 auto;
+
+                .logo-area {
+                    padding-top: 0em;
+                    margin-top: -.4em;
+                    margin-bottom: .2em;
+
+                    img {
+                        max-width: 120px;
+                    }
+                }
+
+                .nav-area {
+                    flex-basis: 70%;
+
+                    a{
+                        padding: 0;
+                        transition: all .2s;
+                        @include fontSize(14);
+                    }
+
+                    a::before, a::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes fixedNavMove {
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
     }
 }

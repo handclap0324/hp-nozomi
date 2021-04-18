@@ -33,6 +33,14 @@
             max-width: 425px;
             margin: 0 auto;
             padding: .5em 3%;
+            transform: translateY(8%);
+            opacity: 0;
+            transition: transform .65s ease-out .5s, opacity .4s cubic-bezier(0, 0, 0.88, 0.32) .5s;
+
+            &.inview {
+                transform: translateY(0%);
+                opacity: 1;
+            }
 
             img {
                 box-shadow: 0px 0px 10px -3px rgba(29, 19, 19, 0.35);
@@ -62,13 +70,12 @@
 
 .kana {
     background-color: rgba($colorSub3, 0.25);
-    background-color: #DC8500;
+    background-color: $colorSub2;
     padding: .2em .6em;
     margin-right: .4em;
     border-radius: 50%;
     color: $colorWhite;
     font-weight: normal;
-
 }
 
 .pd0 {

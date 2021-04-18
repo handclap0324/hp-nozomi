@@ -1,10 +1,84 @@
+.loading {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 5001;
+    pointer-events: none;
+    background-color: $colorWhite;
+    animation: loading 5s ease-in-out 0s forwards;
+
+    .loading-inner {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+
+        .loading-logo {
+            width: 200px;
+            transform: scale(0.9, 0.9);
+            opacity: 0;
+            animation : loadingLogo 4.8s ease-in 0s forwards;
+        }
+    }
+
+    @keyframes loading {
+        0% {
+            opacity: 1;
+            transform: translate(0%, 0%);
+        }
+
+        50% {
+            opacity: 1;
+            transform: translate(0%, 0%);
+        }
+
+
+        98% {
+            opacity: 1;
+            transform: translate(0%, 0%);
+        }
+
+        // 99% {
+        //     opacity: 0;
+        //     transform: translate(0%, 0%);
+        // }
+
+        100% {
+            opacity: 0;
+            transform: translate(-100%, 0%);
+        }
+    }
+
+    @keyframes loadingLogo {
+        50% {
+            opacity: 1;
+            transform: scale(1.0, 1.0);
+        }
+        95% {
+            opacity: 1;
+            transform: scale(1.0, 1.0);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(1.0, 1.0);
+        }
+    }
+}
+
 
 .home {
     section:nth-child(2) {
-        background-color: rgba($colorSub3, 0.2);
         background-color: rgba($colorBg, 0.5);
         padding-top: 4em;
         padding-bottom: 4em;
+        margin-top: 5em;
+
+        @media only screen and (max-width: $breakpoint_tb) {
+            margin-top: 4.5em;
+        }
     
         .container-main {
             margin-top: 0;
@@ -23,14 +97,20 @@
 h2.top-h2-heading {
     @include fontSize(20);
     margin: 0 auto;
-    margin-bottom: 1em;
+    margin-bottom: 1.25em;
   
     & span.number {
       display: block;
-      font-size: 40px;
-      color: $colorMain;
-      letter-spacing: 0.075em;
+      font-size: 65px;
+      color: rgba($colorMain, 1);
+      letter-spacing: 0.05em;
     }
+    // & span.number {
+    //   display: block;
+    //   font-size: 40px;
+    //   color: $colorMain;
+    //   letter-spacing: 0.075em;
+    // }
   
     &::after, &::before {
       display: none;
