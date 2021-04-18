@@ -3,23 +3,98 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    //Loading(sessionStrage管理)
+    // Object-fit Polyfill  ///////////////////
 
-    const animationTime = 4000; //cssでのアニメーション時間
+    const body = document.body;
+    //topページのみ適用
+    if(body.classList.contains('home')) {
+        objectFitImages('.ofi-img');
+    }
+
+    ////////////////////////////////////////////////////////
+    //Loading(sessionStrage管理) とヒーローイメージスライダー
+    ////////////////////////////////////////////////////////
+
+    const animationTime = 5000; //cssでのLoadingアニメーション時間
     const loading = document.getElementById('js-loading');
-    const hero = document.getElementById('js-hero');
 
-    if(hero !== null && loading !== null) {
+    const heroWrapp = document.getElementById('js-hero-wrapp');
+    const heros = document.querySelectorAll('.hero');
+    const herosArry = Array.from(heros);
+
+    if(heroWrapp !== null && loading !== null) {
 
         if (sessionStorage.getItem("nozomi-visited") ) {
             loading.style.display = "none";
-            hero.classList.add('animation-start');
+            sliderStart();
         } else {
             sessionStorage.setItem("nozomi-visited", 1);
             setTimeout(function(){
-                hero.classList.add('animation-start');
+                sliderStart();
             }, animationTime);
         }
+    }
+
+    ////////////////////////////////////////////
+    //  Heroイメージ スライダー
+    ///////////////////////////////////////////
+
+    function sliderStart() {
+        
+        let actNum = 0;
+        let nowSlide;
+        let nextSlide;
+
+        setTimeout(function() {
+          herosArry[actNum].classList.add("animation-start");
+        }, 50);
+
+        
+        setInterval(function() {
+
+            nowSlide = herosArry[actNum];
+
+            if(actNum === herosArry.length - 1) { 
+                nextSlide = herosArry[0];
+                actNum = 0;
+            } else {
+                nextSlide = herosArry[++actNum];
+            }
+
+            nowSlide.classList.remove("animation-start");
+            nextSlide.classList.add("animation-start");
+
+        }, 10000)
+    }
+
+    const heroImgs = document.querySelectorAll('.ofi-img');
+    const heaederHeight = 121; // headerの高さ
+
+    function heroImageHeight() {
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const maxHeight = 750;
+        let setHeight;
+        if(windowWidth < 1025) {
+            setHeight = Math.floor((windowWidth * 2) / 3);
+        } else if (windowWidth > 1780) {
+            setHeight = maxHeight;
+        } else if(windowHeight - heaederHeight < maxHeight ){
+            setHeight = windowHeight - heaederHeight;
+        } else {
+            setHeight = 650;
+        }
+
+        heroWrapp.style.height = setHeight + 'px';
+
+        for(let i = 0; i < heroImgs.length; i++) {
+            heroImgs[i].style.height = setHeight + 'px';
+        }
+    }
+
+    if(heroWrapp) {
+        heroImageHeight();
+        window.addEventListener('resize', heroImageHeight );
     }
 
     //toggle menu
@@ -82,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const today = new Date();
         const newsDate = new Date(tableTh.dataset.date);
         const differMilliseconds = today - newsDate;
-        const differDays = differMilliseconds / (1000*60*60*24);
+        const differDays = differMilliseconds / ( 1000*60*60*24 );
 
         //30日以内ならnew表示
          if(differDays <= 30) {
@@ -148,47 +223,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const thisYear = document.getElementById('js-thisyear');
     thisYear.textContent = new Date().getFullYear();
 
-    /////////////////////////////////////////////
-    //  Object-fit Polyfill   ///////////////////
-    /////////////////////////////////////////////
-
-    const body = document.body;
-    //topページのみ適用
-    if(body.classList.contains('home')) {
-        objectFitImages('.ofi-img');
-    }
-
-    ////////////////////////////////////////////
-    //  Heroイメージ
-    ///////////////////////////////////////////
-
-    const heroImgs = document.querySelectorAll('.ofi-img');
-    const heaederHeight = 121; // headerの高さ
-
-    function heroImageHeight() {
-        const windowWidth = window.innerWidth;
-        const windowHeight = window.innerHeight;
-        const maxHeight = 750;
-        let setHeight;
-        if(windowWidth < 1025) {
-            setHeight = Math.floor((windowWidth * 2) / 3);
-        } else if (windowWidth > 1780) {
-            setHeight = maxHeight;
-        } else if(windowHeight - heaederHeight < maxHeight ){
-            setHeight = windowHeight - heaederHeight;
-        } else {
-            setHeight = 650;
-        }
-
-        for(let i = 0; i < heroImgs.length; i++) {
-            heroImgs[i].style.height = setHeight + 'px';
-        }
-    }
-
-    if(heroImgs) {
-        heroImageHeight();
-        window.addEventListener('resize', heroImageHeight );
-    }
 
 
     /////////////////////////////////////////////////////////////
@@ -209,8 +243,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const options = {
         root: null,
-        rootMargin: "0px",
-        thredshold: 0.3 
+        rootMargin: "0px 0px -50px 0px",
+        thredshold: 1.0
     };
 
     const io = new IntersectionObserver(cb, options);

@@ -7,7 +7,7 @@
     z-index: 5001;
     pointer-events: none;
     background-color: $colorWhite;
-    animation: loading 4s ease-in 0s forwards;
+    animation: loading 5s ease-in-out 0s forwards;
 
     .loading-inner {
         display: flex;
@@ -20,7 +20,7 @@
             width: 200px;
             transform: scale(0.9, 0.9);
             opacity: 0;
-            animation : loadingLogo 3.3s ease-in .5s forwards;
+            animation : loadingLogo 4.8s ease-in 0s forwards;
         }
     }
 
@@ -35,15 +35,16 @@
             transform: translate(0%, 0%);
         }
 
-        90% {
+
+        98% {
             opacity: 1;
             transform: translate(0%, 0%);
         }
 
-        99% {
-            opacity: 0;
-            transform: translate(0%, 0%);
-        }
+        // 99% {
+        //     opacity: 0;
+        //     transform: translate(0%, 0%);
+        // }
 
         100% {
             opacity: 0;
@@ -52,7 +53,11 @@
     }
 
     @keyframes loadingLogo {
-        90% {
+        50% {
+            opacity: 1;
+            transform: scale(1.0, 1.0);
+        }
+        95% {
             opacity: 1;
             transform: scale(1.0, 1.0);
         }
@@ -70,6 +75,10 @@
         padding-top: 4em;
         padding-bottom: 4em;
         margin-top: 5em;
+
+        @media only screen and (max-width: $breakpoint_tb) {
+            margin-top: 4.5em;
+        }
     
         .container-main {
             margin-top: 0;
