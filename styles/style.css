@@ -341,35 +341,62 @@ template {
  
  .example a { @include hover-underline('slide', 'center');}
  ************************************************************************************************/
+.hero-wrapp {
+  position: relative;
+  width: 100%;
+  height: 650px;
+  overflow: hidden;
+}
+
 .hero {
-  background-color: #00A440;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
 }
 
 .hero .hero-image {
   overflow: hidden;
   position: relative;
+  z-index: 1;
 }
 
 .hero .hero-image .ofi-img {
   width: 100%;
-  height: 650px;
+  height: auto;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center 32%;
      object-position: center 32%;
   font-family: 'object-fit: cover; object-position: center 32%;';
+  opacity: 0;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transition: opacity 1s ease-in-out, -webkit-transform 10s ease-in;
+  transition: opacity 1s ease-in-out, -webkit-transform 10s ease-in;
+  transition: opacity 1s ease-in-out, transform 10s ease-in;
+  transition: opacity 1s ease-in-out, transform 10s ease-in, -webkit-transform 10s ease-in;
+  z-index: 2;
 }
 
 .hero .hero-image .hero-image-text {
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: 50%;
   width: 100%;
   height: auto;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   padding: 0 1em;
-  z-index: 2;
+  z-index: 3;
+}
+
+@media only screen and (max-width: 767px) {
+  .hero .hero-image .hero-image-text {
+    top: 30%;
+  }
 }
 
 .hero .hero-image .hero-image-text .hero-image-text-inner {
@@ -386,7 +413,7 @@ template {
 @media only screen and (max-width: 767px) {
   .hero .hero-image .hero-image-text .hero-image-text-inner {
     max-width: 400px;
-    padding: .5em .5em .5em .5em;
+    padding: .75em .5em .75em .5em;
   }
 }
 
@@ -394,6 +421,7 @@ template {
   font-size: 32px;
   margin: 0;
   font-weight: bold;
+  line-height: 1.25;
   text-align: center;
   opacity: 0;
 }
@@ -408,8 +436,10 @@ template {
   position: absolute;
   width: 100%;
   height: auto;
-  bottom: 7.5%;
+  bottom: 5%;
   left: 0;
+  z-index: 2;
+  padding: 0 .5em;
 }
 
 .hero .hero-image .hero-image-circle .hero-image-circle-inner {
@@ -446,8 +476,9 @@ template {
 }
 
 .hero.animation-start .ofi-img {
-  -webkit-animation: sclaleBig 10s linear 0s forwards;
-          animation: sclaleBig 10s linear 0s forwards;
+  opacity: 1;
+  -webkit-transform: scale(1.15, 1.15);
+          transform: scale(1.15, 1.15);
 }
 
 .hero.animation-start .hero-image-text-inner {
@@ -461,18 +492,18 @@ template {
 }
 
 .hero.animation-start .hero-image-circle-left {
-  -webkit-animation: opacity .7s linear 1s forwards;
-          animation: opacity .7s linear 1s forwards;
+  -webkit-animation: opacity .5s ease-in-out 1s forwards;
+          animation: opacity .5s ease-in-out 1s forwards;
 }
 
 .hero.animation-start .hero-image-circle-center {
-  -webkit-animation: opacity .7s linear 2s forwards;
-          animation: opacity .7s linear 2s forwards;
+  -webkit-animation: opacity .5s ease-in-out 2s forwards;
+          animation: opacity .5s ease-in-out 2s forwards;
 }
 
 .hero.animation-start .hero-image-circle-right {
-  -webkit-animation: opacity .7s linear 3s forwards;
-          animation: opacity .7s linear 3s forwards;
+  -webkit-animation: opacity .5s ease-in-out 3s forwards;
+          animation: opacity .5s ease-in-out 3s forwards;
 }
 
 @-webkit-keyframes sclaleBig {
@@ -1044,7 +1075,7 @@ aside ul li a:hover::before {
   z-index: 5;
   padding-top: 2em;
   padding-bottom: 2em;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.9);
   -webkit-transform-origin: center left;
           transform-origin: center left;
   -webkit-transform: scaleX(0);
@@ -1344,9 +1375,11 @@ header .container-inner .font-size-button {
   background-color: #fff;
   font-size: 14px;
   width: 70px;
+  border: 2px solid #006E90;
   border-radius: 6px;
   outline: none;
   padding-top: 3px;
+  padding-bottom: 2px;
   margin-right: 5px;
   -webkit-transition: all .2s;
   transition: all .2s;
@@ -1696,7 +1729,7 @@ header nav ul li a span {
     width: 100%;
     max-width: 100%;
     z-index: 500;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: white;
     border-bottom: 3px solid rgba(0, 164, 64, 0.8);
     -webkit-box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, 0.1);
             box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, 0.1);
@@ -1896,8 +1929,8 @@ footer .copyright {
   z-index: 5001;
   pointer-events: none;
   background-color: #fff;
-  -webkit-animation: loading 4s ease-in 0s forwards;
-          animation: loading 4s ease-in 0s forwards;
+  -webkit-animation: loading 5s ease-in-out 0s forwards;
+          animation: loading 5s ease-in-out 0s forwards;
 }
 
 .loading .loading-inner {
@@ -1919,8 +1952,8 @@ footer .copyright {
   -webkit-transform: scale(0.9, 0.9);
           transform: scale(0.9, 0.9);
   opacity: 0;
-  -webkit-animation: loadingLogo 3.3s ease-in .5s forwards;
-          animation: loadingLogo 3.3s ease-in .5s forwards;
+  -webkit-animation: loadingLogo 4.8s ease-in 0s forwards;
+          animation: loadingLogo 4.8s ease-in 0s forwards;
 }
 
 @-webkit-keyframes loading {
@@ -1934,13 +1967,8 @@ footer .copyright {
     -webkit-transform: translate(0%, 0%);
             transform: translate(0%, 0%);
   }
-  90% {
+  98% {
     opacity: 1;
-    -webkit-transform: translate(0%, 0%);
-            transform: translate(0%, 0%);
-  }
-  99% {
-    opacity: 0;
     -webkit-transform: translate(0%, 0%);
             transform: translate(0%, 0%);
   }
@@ -1962,13 +1990,8 @@ footer .copyright {
     -webkit-transform: translate(0%, 0%);
             transform: translate(0%, 0%);
   }
-  90% {
+  98% {
     opacity: 1;
-    -webkit-transform: translate(0%, 0%);
-            transform: translate(0%, 0%);
-  }
-  99% {
-    opacity: 0;
     -webkit-transform: translate(0%, 0%);
             transform: translate(0%, 0%);
   }
@@ -1980,7 +2003,12 @@ footer .copyright {
 }
 
 @-webkit-keyframes loadingLogo {
-  90% {
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  95% {
     opacity: 1;
     -webkit-transform: scale(1, 1);
             transform: scale(1, 1);
@@ -1993,7 +2021,12 @@ footer .copyright {
 }
 
 @keyframes loadingLogo {
-  90% {
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  95% {
     opacity: 1;
     -webkit-transform: scale(1, 1);
             transform: scale(1, 1);
@@ -2010,6 +2043,12 @@ footer .copyright {
   padding-top: 4em;
   padding-bottom: 4em;
   margin-top: 5em;
+}
+
+@media only screen and (max-width: 767px) {
+  .home section:nth-child(2) {
+    margin-top: 4.5em;
+  }
 }
 
 .home section:nth-child(2) .container-main {
@@ -2390,13 +2429,13 @@ h2.top-h2-heading.last {
   max-width: 425px;
   margin: 0 auto;
   padding: .5em 3%;
-  -webkit-transform: translateY(15%);
-          transform: translateY(15%);
+  -webkit-transform: translateY(8%);
+          transform: translateY(8%);
   opacity: 0;
-  -webkit-transition: opacity .7s ease-in .5s, -webkit-transform .5s ease-out .5s;
-  transition: opacity .7s ease-in .5s, -webkit-transform .5s ease-out .5s;
-  transition: transform .5s ease-out .5s, opacity .7s ease-in .5s;
-  transition: transform .5s ease-out .5s, opacity .7s ease-in .5s, -webkit-transform .5s ease-out .5s;
+  -webkit-transition: opacity 0.4s cubic-bezier(0, 0, 0.88, 0.32) 0.5s, -webkit-transform 0.65s ease-out 0.5s;
+  transition: opacity 0.4s cubic-bezier(0, 0, 0.88, 0.32) 0.5s, -webkit-transform 0.65s ease-out 0.5s;
+  transition: transform 0.65s ease-out 0.5s, opacity 0.4s cubic-bezier(0, 0, 0.88, 0.32) 0.5s;
+  transition: transform 0.65s ease-out 0.5s, opacity 0.4s cubic-bezier(0, 0, 0.88, 0.32) 0.5s, -webkit-transform 0.65s ease-out 0.5s;
 }
 
 .photo-space-project .photo-space-double .photo.inview {
